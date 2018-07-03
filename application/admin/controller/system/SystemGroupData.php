@@ -6,8 +6,8 @@ use app\admin\library\FormBuilder;
 use service\JsonService as Json;
 use service\UploadService as Upload;
 use service\UtilService as Util;
-use think\Request;
-use think\Url;
+use think\facade\Request;
+use think\facade\Url;
 use app\admin\model\system\SystemGroup as GroupModel;
 use app\admin\model\system\SystemGroupData as GroupDataModel;
 use app\admin\controller\AuthController;
@@ -22,7 +22,7 @@ class SystemGroupData extends AuthController
 
     /**
      * 显示资源列表
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function index($gid)
     {
@@ -42,7 +42,7 @@ class SystemGroupData extends AuthController
 
     /**
      * 显示创建资源表单页.
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function create($gid)
     {
@@ -81,8 +81,8 @@ class SystemGroupData extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\Request  $request
-     * @return \think\Response
+     * @param  \think\facade\Request  $request
+     * @return \think\facade\Response
      */
     public function save(Request $request,$gid)
     {
@@ -110,7 +110,7 @@ class SystemGroupData extends AuthController
      * 显示指定的资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function read($id)
     {
@@ -121,7 +121,7 @@ class SystemGroupData extends AuthController
      * 显示编辑资源表单页.
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function edit($gid,$id)
     {
@@ -162,9 +162,9 @@ class SystemGroupData extends AuthController
     /**
      * 保存更新的资源
      *
-     * @param  \think\Request  $request
+     * @param  \think\facade\Request  $request
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function update(Request $request, $id)
     {
@@ -192,7 +192,7 @@ class SystemGroupData extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function delete($id)
     {

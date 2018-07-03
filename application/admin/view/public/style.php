@@ -1,5 +1,5 @@
 <!--<script type="text/javascript" src="/static/plug/basket.js"></script>-->
-<script type="text/javascript" src="{__ADMIN_PATH}/plug/requirejs/require.js"></script>
+<script type="text/javascript" src="__ADMIN_SYSTEM__/plug/requirejs/require.js"></script>
 <?php /*  <script type="text/javascript" src="/static/plug/requirejs/require-basket-load.js"></script>  */ ?>
 <script>
     requirejs.config({
@@ -38,4 +38,4 @@
         }
     });
 </script>
-<script type="text/javascript" src="{__ADMIN_PATH}util/mpFrame.js"></script>
+<script type="text/javascript" src="__ADMIN_SYSTEM__/util/mpFrame.js"></script>

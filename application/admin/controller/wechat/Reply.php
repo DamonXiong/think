@@ -7,7 +7,7 @@ use app\admin\model\wechat\WechatReply;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\Request;
+use think\facade\Request;
 
 /**
  * 关键字管理  控制器

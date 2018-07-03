@@ -8,9 +8,9 @@ use traits\CurdControllerTrait;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\Request;
+use think\facade\Request;
 use app\admin\model\store\StoreProductReply as ProductReplyModel;
-use think\Url;
+use think\facade\Url;
 /**
  * 评论管理 控制器
  * Class StoreProductReply
@@ -24,7 +24,7 @@ class StoreProductReply extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function index()
     {
@@ -45,7 +45,7 @@ class StoreProductReply extends AuthController
 
     /**
      * @param $id
-     * @return \think\response\Json|void
+     * @return \think\facade\Response\Json|void
      */
     public function delete($id){
         if(!$id) return $this->failed('数据不存在');

@@ -13,7 +13,7 @@ use app\admin\library\FormBuilder;
 use app\admin\model\store\StoreCouponIssue as CouponIssueModel;
 use app\admin\model\store\StoreCouponIssueUser;
 use service\JsonService;
-use think\Url;
+use think\facade\Url;
 use traits\CurdControllerTrait;
 
 class StoreCouponIssue extends AuthController

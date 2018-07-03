@@ -8,9 +8,9 @@ use traits\CurdControllerTrait;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\Request;
+use think\facade\Request;
 use app\admin\model\store\StoreProduct as ProductModel;
-use think\Url;
+use think\facade\Url;
 use app\admin\model\store\StoreSeckill as StoreSeckillModel;
 
 /**
@@ -28,7 +28,7 @@ class StoreSeckill extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function index()
     {
@@ -44,7 +44,7 @@ class StoreSeckill extends AuthController
     /**
      * 显示创建资源表单页.
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function create()
     {
@@ -53,7 +53,7 @@ class StoreSeckill extends AuthController
     }
 
     /**
-     * @return \think\response\Json
+     * @return \think\facade\Response\Json
      */
     public function rules()
     {
@@ -79,7 +79,7 @@ class StoreSeckill extends AuthController
     }
     /**
      * 上传图片
-     * @return \think\response\Json
+     * @return \think\facade\Response\Json
      */
     public function upload()
     {
@@ -93,8 +93,8 @@ class StoreSeckill extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\Request  $request
-     * @return \think\Response
+     * @param  \think\facade\Request  $request
+     * @return \think\facade\Response
      */
     public function save(Request $request)
     {
@@ -143,7 +143,7 @@ class StoreSeckill extends AuthController
      * 显示编辑资源表单页.
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function edit($id)
     {
@@ -161,7 +161,7 @@ class StoreSeckill extends AuthController
      * 显示指定的资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function read($id)
     {
@@ -191,9 +191,9 @@ class StoreSeckill extends AuthController
     /**
      * 保存更新的资源
      *
-     * @param  \think\Request  $request
+     * @param  \think\facade\Request  $request
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function update(Request $request, $id)
     {
@@ -240,7 +240,7 @@ class StoreSeckill extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function delete($id)
     {

@@ -10,7 +10,7 @@ namespace app\admin\model\system;
 
 use traits\ModelTrait;
 use basic\ModelBasic;
-use think\Request;
+use think\facade\Request;
 
 /**
  * 管理员操作记录

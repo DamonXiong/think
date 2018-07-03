@@ -2,8 +2,8 @@
 
 namespace app\admin\controller\system;
 
-use think\Request;
-use think\Url;
+use think\facade\Request;
+use think\facade\Url;
 use app\admin\model\system\SystemFile as SystemFileModel;
 
 use app\admin\controller\AuthController;

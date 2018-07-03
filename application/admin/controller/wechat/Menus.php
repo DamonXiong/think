@@ -3,9 +3,9 @@ namespace app\admin\controller\wechat;
 
 use app\admin\controller\AuthController;
 use service\WechatService;
-use think\Cache;
+use think\facade\Cache;
 use think\Db;
-use think\Request;
+use think\facade\Request;
 
 /**
  * 微信菜单  控制器

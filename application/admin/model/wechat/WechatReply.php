@@ -13,7 +13,7 @@ use basic\ModelBasic;
 use service\HookService;
 use service\UtilService;
 use service\WechatService;
-use think\Url;
+use think\facade\Url;
 
 /**
  * 关键字 model
@@ -28,7 +28,7 @@ class WechatReply extends ModelBasic
 
     public function getUrlAttr($value,$data)
     {
-        return $value == '' ? \think\Url::build('index/index/news',['id'=>$data['id']]) : $value;
+        return $value == '' ? \think\facade\Url::build('index/index/news',['id'=>$data['id']]) : $value;
     }
 
     /**

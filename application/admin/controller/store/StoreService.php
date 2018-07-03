@@ -5,8 +5,8 @@ use app\admin\library\FormBuilder;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\Request;
-use think\Url;
+use think\facade\Request;
+use think\facade\Url;
 use app\admin\model\store\StoreService as ServiceModel;
 use app\admin\model\store\StoreServiceLog as StoreServiceLog;
 use app\admin\model\wechat\WechatUser as UserModel;
@@ -21,7 +21,7 @@ class StoreService extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function index()
     {
@@ -31,7 +31,7 @@ class StoreService extends AuthController
     /**
      * 显示创建资源表单页.
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function create(){
         $where = Util::getMore([
@@ -48,8 +48,8 @@ class StoreService extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\Request  $request
-     * @return \think\Response
+     * @param  \think\facade\Request  $request
+     * @return \think\facade\Response
      */
     public function save(Request $request){
         $params = $request->post();
@@ -71,7 +71,7 @@ class StoreService extends AuthController
      * 显示编辑资源表单页.
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function edit($id)
     {
@@ -86,8 +86,8 @@ class StoreService extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\Request  $request
-     * @return \think\Response
+     * @param  \think\facade\Request  $request
+     * @return \think\facade\Response
      */
     public function update(Request $request,$id)
     {
@@ -102,7 +102,7 @@ class StoreService extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function delete($id)
     {
@@ -114,7 +114,7 @@ class StoreService extends AuthController
 
     /**
      * 上传图片
-     * @return \think\response\Json
+     * @return \think\facade\Response\Json
      */
     public function upload()
     {
@@ -129,7 +129,7 @@ class StoreService extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function chat_user($id)
     {
@@ -143,7 +143,7 @@ class StoreService extends AuthController
      /**
      * 显示资源列表
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function chat_list($uid,$to_uid)
     {

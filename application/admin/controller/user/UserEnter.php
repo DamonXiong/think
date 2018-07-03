@@ -12,8 +12,8 @@ use traits\CurdControllerTrait;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\Request;
-use think\Url;
+use think\facade\Request;
+use think\facade\Url;
 use app\admin\model\user\UserEnter as UserEnterModel;
 
 /**
@@ -29,7 +29,7 @@ class UserEnter extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function index()
     {
@@ -86,7 +86,7 @@ class UserEnter extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function delete($id)
     {

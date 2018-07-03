@@ -15,7 +15,7 @@ use service\PHPExcelService;
 use traits\ModelTrait;
 use basic\ModelBasic;
 use service\WechatTemplateService;
-use think\Url;
+use think\facade\Url;
 
 /**
  * 订单管理Model

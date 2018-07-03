@@ -8,7 +8,7 @@ namespace app\admin\model\system;
 
 use traits\ModelTrait;
 use basic\ModelBasic;
-use think\Url;
+use think\facade\Url;
 
 /**
  * 菜单  model

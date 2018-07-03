@@ -9,7 +9,7 @@
 namespace app\admin\model\user;
 use app\wap\model\user\UserBill;
 use app\wap\model\user;
-use think\Url;
+use think\facade\Url;
 use traits\ModelTrait;
 use basic\ModelBasic;
 use service\WechatTemplateService;

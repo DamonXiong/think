@@ -40,11 +40,11 @@ class AuthController extends SystemBasic
     protected function initialize()
     {
         parent::initialize();
-        if(!SystemAdmin::hasActiveAdmin()) return $this->redirect('admin/login/index');
+        if(!SystemAdmin::hasActiveAdmin()) return $this->redirect('Login/index');
         try{
             $adminInfo = SystemAdmin::activeAdminInfoOrFail();
         }catch (\Exception $e){
-            return $this->failed(SystemAdmin::getErrorInfo($e->getMessage()),Url::build('admin/login/index'));
+            return $this->failed(SystemAdmin::getErrorInfo($e->getMessage()),Url::build('Login/index'));
         }
         $this->adminInfo = $adminInfo;
         $this->adminId = $adminInfo['id'];

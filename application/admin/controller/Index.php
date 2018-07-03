@@ -11,7 +11,7 @@ use app\admin\model\store\StoreOrder;
 use service\CacheService;
 use service\UpgradeService;
 use service\UpgradeApi;
-use think\facade\DB;
+use think\DB;
 
 /**
  * 首页控制器

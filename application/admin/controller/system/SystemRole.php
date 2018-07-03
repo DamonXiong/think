@@ -6,8 +6,8 @@ namespace app\admin\controller\system;
 use app\admin\model\system\SystemMenus;
 use service\UtilService as Util;
 use service\JsonService as Json;
-use think\Request;
-use think\Url;
+use think\facade\Request;
+use think\facade\Url;
 use app\admin\model\system\SystemRole as RoleModel;
 use app\admin\controller\AuthController;
 
@@ -20,7 +20,7 @@ class SystemRole extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function index()
     {
@@ -37,7 +37,7 @@ class SystemRole extends AuthController
     /**
      * 显示创建资源表单页.
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function create()
     {
@@ -54,8 +54,8 @@ class SystemRole extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\Request  $request
-     * @return \think\Response
+     * @param  \think\facade\Request  $request
+     * @return \think\facade\Response
      */
     public function save(Request $request)
     {
@@ -81,7 +81,7 @@ class SystemRole extends AuthController
      * 显示指定的资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function read($id)
     {
@@ -92,7 +92,7 @@ class SystemRole extends AuthController
      * 显示编辑资源表单页.
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function edit($id)
     {
@@ -106,9 +106,9 @@ class SystemRole extends AuthController
     /**
      * 保存更新的资源
      *
-     * @param  \think\Request  $request
+     * @param  \think\facade\Request  $request
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function update(Request $request, $id)
     {
@@ -133,7 +133,7 @@ class SystemRole extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function delete($id)
     {

@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>404错误</title>
-    <link rel="stylesheet" href="{__MODULE_PATH}exception/css/style.css">
+    <link rel="stylesheet" href="__ADMIN_MODOULE__/exception/css/style.css">
 </head>
 <body>
 

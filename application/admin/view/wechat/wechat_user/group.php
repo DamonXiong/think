@@ -1,10 +1,10 @@
 {extend name="public/container"}
 {block name="head_top"}
-<link href="{__FRAME_PATH}css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="__ADMIN_FRAME__/css/plugins/iCheck/custom.css" rel="stylesheet">
 <script src="{__PLUG_PATH}moment.js"></script>
 <link rel="stylesheet" href="{__PLUG_PATH}daterangepicker/daterangepicker.css">
 <script src="{__PLUG_PATH}daterangepicker/daterangepicker.js"></script>
-<script src="{__ADMIN_PATH}frame/js/plugins/iCheck/icheck.min.js"></script>
+<script src="__ADMIN_SYSTEM__/frame/js/plugins/iCheck/icheck.min.js"></script>
 {/block}
 {block name="content"}
 <div class="row">

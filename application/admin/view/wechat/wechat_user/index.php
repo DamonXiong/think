@@ -1,13 +1,13 @@
 {extend name="public/container"}
 {block name="head_top"}
-<link href="{__FRAME_PATH}css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="__ADMIN_FRAME__/css/plugins/iCheck/custom.css" rel="stylesheet">
 <script src="{__PLUG_PATH}moment.js"></script>
 <link rel="stylesheet" href="{__PLUG_PATH}daterangepicker/daterangepicker.css">
 <script src="{__PLUG_PATH}daterangepicker/daterangepicker.js"></script>
-<script src="{__ADMIN_PATH}frame/js/plugins/iCheck/icheck.min.js"></script>
-<link href="{__FRAME_PATH}css/plugins/footable/footable.core.css" rel="stylesheet">
+<script src="__ADMIN_SYSTEM__/frame/js/plugins/iCheck/icheck.min.js"></script>
+<link href="__ADMIN_FRAME__/css/plugins/footable/footable.core.css" rel="stylesheet">
 <script src="{__PLUG_PATH}sweetalert2/sweetalert2.all.min.js"></script>
-<script src="{__FRAME_PATH}js/plugins/footable/footable.all.min.js"></script>
+<script src="__ADMIN_FRAME__/js/plugins/footable/footable.all.min.js"></script>
 <style>
     .on-tag{background-color: #eea91e;}
     .height-auto{height: 300px;}

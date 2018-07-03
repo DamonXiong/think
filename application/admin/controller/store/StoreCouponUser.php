@@ -9,7 +9,7 @@ use service\JsonService as Json;
 use app\admin\model\store\StoreCoupon as CouponModel;
 use app\admin\model\store\StoreCouponUser as CouponUserModel;
 use app\admin\model\wechat\WechatUser as UserModel;
-use think\Request;
+use think\facade\Request;
 
 /**
  * 优惠券发放记录控制器
@@ -69,7 +69,7 @@ class StoreCouponUser extends AuthController
      * 发放优惠券到指定个人
      * @param $id
      * @param $uid
-     * @return \think\response\Json
+     * @return \think\facade\Response\Json
      */
     public function grant($id,$uid){
         if(!$id) return Json::fail('数据不存在!');

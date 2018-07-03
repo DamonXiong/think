@@ -1,7 +1,7 @@
 {extend name="public/container"}
 {block name="head_top"}
-<link rel="stylesheet" type="text/css" href="{__ADMIN_PATH}css/main.css" />
-<link href="{__FRAME_PATH}css/plugins/iCheck/custom.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="__ADMIN_SYSTEM__/css/main.css" />
+<link href="__ADMIN_FRAME__/css/plugins/iCheck/custom.css" rel="stylesheet">
 {/block}
 {block name="content"}
 <div id="app" class="row">
@@ -160,9 +160,9 @@
 </div>
 {/block}
 {block name="script"}
-<script src="{__FRAME_PATH}js/plugins/iCheck/icheck.min.js"></script>
-<script src="{__FRAME_PATH}js/bootstrap.min.js"></script>
-<script src="{__FRAME_PATH}js/content.min.js"></script>
+<script src="__ADMIN_FRAME__/js/plugins/iCheck/icheck.min.js"></script>
+<script src="__ADMIN_FRAME__/js/bootstrap.min.js"></script>
+<script src="__ADMIN_FRAME__/js/content.min.js"></script>
 <script src="{__PLUG_PATH}reg-verify.js"></script>
 <script type="text/javascript">
     $eb = parent._mpApi;

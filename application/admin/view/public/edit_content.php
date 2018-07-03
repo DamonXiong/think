@@ -6,13 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>编辑内容</title>
-    <link href="{__FRAME_PATH}css/font-awesome.min.css" rel="stylesheet">
-    <link href="{__ADMIN_PATH}plug/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="{__ADMIN_PATH}plug/umeditor/third-party/jquery.min.js"></script>
-    <script type="text/javascript" src="{__ADMIN_PATH}plug/umeditor/third-party/template.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="{__ADMIN_PATH}plug/umeditor/umeditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="{__ADMIN_PATH}plug/umeditor/umeditor.min.js"></script>
-    <script type="text/javascript" src="{__ADMIN_PATH}plug/umeditor/lang/zh-cn/zh-cn.js"></script>
+    <link href="__ADMIN_FRAME__/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__ADMIN_SYSTEM__/plug/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="__ADMIN_SYSTEM__/plug/umeditor/third-party/jquery.min.js"></script>
+    <script type="text/javascript" src="__ADMIN_SYSTEM__/plug/umeditor/third-party/template.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__ADMIN_SYSTEM__/plug/umeditor/umeditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__ADMIN_SYSTEM__/plug/umeditor/umeditor.min.js"></script>
+    <script type="text/javascript" src="__ADMIN_SYSTEM__/plug/umeditor/lang/zh-cn/zh-cn.js"></script>
     <style>
         .edui-btn-toolbar .edui-btn.edui-active .edui-icon-fullscreen.edui-icon{  display: none;}
         .edui-container{overflow: initial !important;}

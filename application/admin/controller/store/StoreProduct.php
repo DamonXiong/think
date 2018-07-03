@@ -14,10 +14,10 @@ use traits\CurdControllerTrait;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\Request;
+use think\facade\Request;
 use app\admin\model\store\StoreCategory as CategoryModel;
 use app\admin\model\store\StoreProduct as ProductModel;
-use think\Url;
+use think\facade\Url;
 use app\admin\model\store\StoreSeckill as StoreSeckillModel;
 use app\admin\model\store\StoreOrder as StoreOrderModel;
 use app\admin\model\store\StoreBargain as StoreBargainModel;
@@ -37,7 +37,7 @@ class StoreProduct extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function index()
     {
@@ -77,7 +77,7 @@ class StoreProduct extends AuthController
     /**
      * 显示创建资源表单页.
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function create()
     {
@@ -86,7 +86,7 @@ class StoreProduct extends AuthController
     }
 
     /**
-     * @return \think\response\Json
+     * @return \think\facade\Response\Json
      */
     public function rules()
     {
@@ -123,7 +123,7 @@ class StoreProduct extends AuthController
 
     /**
      * 上传图片
-     * @return \think\response\Json
+     * @return \think\facade\Response\Json
      */
     public function upload()
     {
@@ -138,8 +138,8 @@ class StoreProduct extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\Request  $request
-     * @return \think\Response
+     * @param  \think\facade\Request  $request
+     * @return \think\facade\Response
      */
     public function save(Request $request)
     {
@@ -205,7 +205,7 @@ class StoreProduct extends AuthController
      * 显示编辑资源表单页.
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function edit($id)
     {
@@ -223,7 +223,7 @@ class StoreProduct extends AuthController
      * 显示指定的资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function read($id)
     {
@@ -264,9 +264,9 @@ class StoreProduct extends AuthController
     /**
      * 保存更新的资源
      *
-     * @param  \think\Request  $request
+     * @param  \think\facade\Request  $request
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function update(Request $request, $id)
     {
@@ -349,7 +349,7 @@ class StoreProduct extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function delete($id)
     {
@@ -451,7 +451,7 @@ class StoreProduct extends AuthController
     /**
      * 点赞
      * @param $id
-     * @return mixed|\think\response\Json|void
+     * @return mixed|\think\facade\Response\Json|void
      */
     public function collect($id){
         if(!$id) return $this->failed('数据不存在');
@@ -464,7 +464,7 @@ class StoreProduct extends AuthController
     /**
      * 收藏
      * @param $id
-     * @return mixed|\think\response\Json|void
+     * @return mixed|\think\facade\Response\Json|void
      */
     public function like($id){
         if(!$id) return $this->failed('数据不存在');
@@ -573,7 +573,7 @@ class StoreProduct extends AuthController
     /**
      * 开启砍价产品
      * @param int $id
-     * @return mixed|\think\response\Json|void
+     * @return mixed|\think\facade\Response\Json|void
      */
     public function bargain($id = 0){
         if(!$id) return $this->failed('数据不存在');
@@ -589,7 +589,7 @@ class StoreProduct extends AuthController
     /**
      * 砍价产品页面
      * @param $id
-     * @return \think\response\Json
+     * @return \think\facade\Response\Json
      */
     public function readBargain($id){
         if(!$id) return $this->failed('数据不存在');
@@ -628,7 +628,7 @@ class StoreProduct extends AuthController
      * 砍价产品保存
      * @param Request $request
      * @param $id
-     * @return \think\response\Json|void
+     * @return \think\facade\Response\Json|void
      */
     public function updateBargain(Request $request,$id){
         if(!$id) return Json::fail('数据不存在');

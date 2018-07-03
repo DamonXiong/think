@@ -1,7 +1,7 @@
 {extend name="public/container"}
 {block name="head_top"}
 <link rel="stylesheet" href="{__PLUG_PATH}daterangepicker/daterangepicker.css">
-<link href="{__FRAME_PATH}css/plugins/footable/footable.core.css" rel="stylesheet">
+<link href="__ADMIN_FRAME__/css/plugins/footable/footable.core.css" rel="stylesheet">
 <script src="{__PLUG_PATH}sweetalert2/sweetalert2.all.min.js"></script>
 <script src="{__PLUG_PATH}moment.js"></script>
 <script src="{__PLUG_PATH}daterangepicker/daterangepicker.js"></script>
@@ -199,7 +199,7 @@
     </div>
 </div>
 
-<script src="{__FRAME_PATH}js/content.min.js?v=1.0.0"></script>
+<script src="__ADMIN_FRAME__/js/content.min.js?v=1.0.0"></script>
 <script>
     (function(){
         var option = {

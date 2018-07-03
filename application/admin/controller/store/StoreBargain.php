@@ -17,8 +17,8 @@ use service\UtilService;
 use traits\CurdControllerTrait;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\Request;
-use think\Url;
+use think\facade\Request;
+use think\facade\Url;
 use app\admin\model\store\StoreBargain as StoreBargainModel;
 
 
@@ -31,7 +31,7 @@ class StoreBargain extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function index()
     {
@@ -64,7 +64,7 @@ class StoreBargain extends AuthController
 
     /**
      * 上传图片
-     * @return \think\response\Json
+     * @return \think\facade\Response\Json
      */
     public function upload()
     {
@@ -80,7 +80,7 @@ class StoreBargain extends AuthController
      * 显示编辑资源表单页.
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function edit($id)
     {
@@ -98,7 +98,7 @@ class StoreBargain extends AuthController
      * 显示指定的资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function read($id)
     {
@@ -133,9 +133,9 @@ class StoreBargain extends AuthController
     /**
      * 保存更新的资源
      *
-     * @param  \think\Request  $request
+     * @param  \think\facade\Request  $request
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function update(Request $request, $id)
     {
@@ -198,7 +198,7 @@ class StoreBargain extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\Response
+     * @return \think\facade\Response
      */
     public function delete($id)
     {
@@ -215,7 +215,7 @@ class StoreBargain extends AuthController
     /**
      * 显示内容窗口
      * @param $id
-     * @return mixed|\think\response\Json|void
+     * @return mixed|\think\facade\Response\Json|void
      */
     public function edit_content($id){
         if(!$id) return $this->failed('数据不存在');
@@ -234,7 +234,7 @@ class StoreBargain extends AuthController
      * @param Request $request
      * @param $id
      * @param $field
-     * @return \think\response\Json|void
+     * @return \think\facade\Response\Json|void
      */
     public function change_field(Request $request,$id,$field){
         if(!$id) return Json::fail('数据不存在!');

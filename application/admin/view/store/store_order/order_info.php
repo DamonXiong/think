@@ -131,7 +131,7 @@
 </div>
 
 
-<script src="{__FRAME_PATH}js/content.min.js?v=1.0.0"></script>
+<script src="__ADMIN_FRAME__/js/content.min.js?v=1.0.0"></script>
 {/block}
 {block name="script"}
 

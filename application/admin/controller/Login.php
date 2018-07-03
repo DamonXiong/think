@@ -7,7 +7,7 @@ use app\admin\model\system\SystemAdmin;
 use basic\SystemBasic;
 use service\CacheService;
 use service\UtilService;
-use think\facade\Request;
+use think\Request;
 use think\facade\Response;
 use think\facade\Session;
 use think\facade\Url;
