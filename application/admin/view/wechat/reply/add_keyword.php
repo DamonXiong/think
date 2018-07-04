@@ -4,7 +4,7 @@
 <script src="__ADMIN_FRAME__/js/bootstrap.min.js"></script>
 <script src="__ADMIN_FRAME__/js/content.min.js"></script>
 <script src="__ADMIN_SYSTEM__/frame/js/ajaxfileupload.js"></script>
-<script src="{__PLUG_PATH}moment.js"></script>
+<script src="__ADMIN_PLUG__/moment.js"></script>
 {/block}
 {block name="content"}
 <div id="app" class="row">

@@ -35,18 +35,17 @@ class SystemLog extends ModelBasic
      */
     public static function adminVisit($adminId,$adminName,$type)
     {
-        $request = Request::instance();
-        $module = $request->module();
-        $controller = $request->controller();
-        $action = $request->action();
-        $route = $request->route();
+        $module = Request::module();
+        $controller = Request::controller();
+        $action = Request::action();
+        $route = Request::route();
         $data = [
-            'method'=>$request->method(),
+            'method'=>Request::method(),
             'admin_id'=>$adminId,
             'admin_name'=>$adminName,
             'path'=>SystemMenus::getAuthName($action,$controller,$module,$route),
             'page'=>SystemMenus::getVisitName($action,$controller,$module,$route)?:'未知',
-            'ip'=>$request->ip(),
+            'ip'=>Request::ip(),
             'type'=>$type
         ];
         return self::set($data);
@@ -60,17 +59,16 @@ class SystemLog extends ModelBasic
      */
     public static function setCurrentVisit($adminInfo, $page)
     {
-        $request = Request::instance();
-        $module = $request->module();
-        $controller = $request->controller();
-        $action = $request->action();
-        $route = $request->route();
+        $module = Request::module();
+        $controller = Request::controller();
+        $action = Request::action();
+        $route = Request::route();
         $data = [
-            'method'=>$request->method(),
+            'method'=>Request::method(),
             'admin_id'=>$adminInfo['id'],
             'path'=>SystemMenus::getAuthName($action,$controller,$module,$route),
             'page'=>$page,
-            'ip'=>$request->ip()
+            'ip'=>Request::ip()
         ];
         return self::set($data);
     }

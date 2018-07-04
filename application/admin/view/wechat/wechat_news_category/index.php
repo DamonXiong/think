@@ -1,6 +1,6 @@
-__ADMIN_SYSTEM__/
+{extend name="public/container"}
 {block name="head_top"}
-<link href="{__ADMIN_PATH}module/wechat/news_category/css/style.css" type="text/css" rel="stylesheet">
+<link href="__ADMIN_SYSTEM__/module/wechat/news_category/css/style.css" type="text/css" rel="stylesheet">
 {/block}
 {block name="content"}
 <div class="row">

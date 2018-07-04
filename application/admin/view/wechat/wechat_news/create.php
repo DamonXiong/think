@@ -1,4 +1,4 @@
-__ADMIN_FRAME__/
+{extend name="public/container"}
 {block name="head_top"}
 
 <link href="__ADMIN_SYSTEM__/plug/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">

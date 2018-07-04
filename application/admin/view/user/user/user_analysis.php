@@ -1,11 +1,11 @@
 {extend name="public/container"}
 {block name="head_top"}
-<link rel="stylesheet" href="{__PLUG_PATH}daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="__ADMIN_PLUG__/daterangepicker/daterangepicker.css">
 <link href="__ADMIN_FRAME__/css/plugins/footable/footable.core.css" rel="stylesheet">
-<script src="{__PLUG_PATH}sweetalert2/sweetalert2.all.min.js"></script>
-<script src="{__PLUG_PATH}moment.js"></script>
-<script src="{__PLUG_PATH}daterangepicker/daterangepicker.js"></script>
-<script src="{__PLUG_PATH}echarts.common.min.js"></script>
+<script src="__ADMIN_PLUG__/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="__ADMIN_PLUG__/moment.js"></script>
+<script src="__ADMIN_PLUG__/daterangepicker/daterangepicker.js"></script>
+<script src="__ADMIN_PLUG__/echarts.common.min.js"></script>
 <style>
     .btn-group-sm>.btn, .btn-sm{
          padding: 4px 10px;

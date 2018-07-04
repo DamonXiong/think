@@ -163,7 +163,7 @@
 <script src="__ADMIN_FRAME__/js/plugins/iCheck/icheck.min.js"></script>
 <script src="__ADMIN_FRAME__/js/bootstrap.min.js"></script>
 <script src="__ADMIN_FRAME__/js/content.min.js"></script>
-<script src="{__PLUG_PATH}reg-verify.js"></script>
+<script src="__ADMIN_PLUG__/reg-verify.js"></script>
 <script type="text/javascript">
     $eb = parent._mpApi;
     $eb.mpFrame.start(function(Vue){

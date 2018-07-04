@@ -1,6 +1,6 @@
 {extend name="public/container"}
 {block name="head_top"}
-<script src="{__PLUG_PATH}sweetalert2/sweetalert2.all.min.js"></script>
+<script src="__ADMIN_PLUG__/sweetalert2/sweetalert2.all.min.js"></script>
 {/block}
 {block name="content"}
 <div class="row">

@@ -1,8 +1,8 @@
 {extend name="public/container"}
 {block name="head_top"}
-<script src="{__PLUG_PATH}moment.js"></script>
-<link rel="stylesheet" href="{__PLUG_PATH}daterangepicker/daterangepicker.css">
-<script src="{__PLUG_PATH}daterangepicker/daterangepicker.js"></script>
+<script src="__ADMIN_PLUG__/moment.js"></script>
+<link rel="stylesheet" href="__ADMIN_PLUG__/daterangepicker/daterangepicker.css">
+<script src="__ADMIN_PLUG__/daterangepicker/daterangepicker.js"></script>
 {/block}
 {block name="content"}
 <div class="row">

@@ -1,5 +1,4 @@
-think\facade\Request
-
+<?php
 namespace app\admin\controller\wechat;
 
 use app\admin\controller\AuthController;

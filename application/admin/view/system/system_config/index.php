@@ -1,4 +1,4 @@
-__ADMIN_FRAME__/
+{extend name="public/container"}
 {block name="head"}
 <link href="{__FRAME_PATH}css/plugins/iCheck/custom.css" rel="stylesheet">
 <script src="__ADMIN_SYSTEM__/plug/validate/jquery.validate.js"></script>

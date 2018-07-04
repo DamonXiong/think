@@ -3,7 +3,7 @@ __ADMIN_SYSTEM__/
 
 {/block}
 {block name="content"}
-<link href="{__ADMIN_PATH}module/wechat/news_category/css/style.css" type="text/css" rel="stylesheet">
+<link href="__ADMIN_SYSTEM__/module/wechat/news_category/css/style.css" type="text/css" rel="stylesheet">
 <div class="row">
     <div class="col-sm-12">
         <div class="ibox">
