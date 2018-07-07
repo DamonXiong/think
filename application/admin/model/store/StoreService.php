@@ -20,12 +20,15 @@ class StoreService extends ModelBasic
     public static function getList($mer_id)
     {
         $model = new self;
-        $model->alias('a');
-        $model->join('wechat_user b ', 'b.uid = a.uid');
-        $model->field('a.*,b.nickname as wx_name');
-        $model->where("mer_id", $mer_id);
-        $model->order('a.id desc');
-        return self::page($model, function ($item, $key) {
+        $modelNew = $model->alias('a')
+            ->join('wechat_user b ', 'b.uid = a.uid')
+            ->field('a.*,b.nickname as wx_name')
+            ->where("mer_id", $mer_id)
+            ->order('a.id desc');
+        // $subsql = $model->hasOne('app\admin\model\wechat\WechatUser', 'uid', 'id')->bind([
+        //     'wx_name' => 'nickname',
+        // ])->where("mer_id", $mer_id)->order('id desc')->fetchSql(true)->select();
+        return self::page($modelNew, function ($item, $key) {
         });
     }
 
