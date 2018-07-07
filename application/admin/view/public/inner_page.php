@@ -5,7 +5,7 @@
     </div>
     <div class="col-sm-6">
         <div class="dataTables_paginate paging_simple_numbers" id="editable_paginate">
-            {$page}
+            <?php echo $page ?>
         </div>
     </div>
 </div>
