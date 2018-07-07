@@ -320,19 +320,20 @@
                 this.upload();
                 this.key = "{$key}"
                 this.msg = "{$title}";
-                window.vm.type = {$replay_arr->type};
-                window.vm.status = {$replay_arr->status};
+                res = <?php echo htmlentities($replay_arr, ENT_NOQUOTES); ?>;
+                window.vm.type = res.type;
+                window.vm.status = res.status;
                 if(res.type == 'image') {
-                    window.vm.dataGroup.image.src = {$replay_arr->data->src};
+                    window.vm.dataGroup.image.src = res.data.src;
                 }else if(res.type == 'text'){
-                    window.vm.dataGroup.text.content = {$replay_arr->data->content};
+                    window.vm.dataGroup.text.content = res.data.content;
                 }else if(res.type == 'voice'){
-                    window.vm.dataGroup.voice.src = {$replay_arr->data->src};
+                    window.vm.dataGroup.voice.src = res.data.src;
                 }else if(res.type == 'news'){
                     window.vm.dataGroup.news = res.data;
                 }
                 if(window.vm.used_key){
-                    window.vm.keyword = {$replay_arr->key};
+                    window.vm.keyword = res.key;
                 }
             }
         });
