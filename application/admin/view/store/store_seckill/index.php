@@ -61,13 +61,13 @@
                                 {$vo.stock}
                             </td>
                             <td class="text-center">
-                                {$vo.start_time|date='Y-m-d H:i:s',###}
+                                {$vo.start_time|date='Y-m-d H:i:s'}
                             </td>
                             <td class="text-center">
-                                {$vo.stop_time|date='Y-m-d H:i:s',###}
+                                {$vo.stop_time|date='Y-m-d H:i:s'}
                             </td>
                             <td class="text-center">
-                                {$vo.add_time|date='Y-m-d H:i:s',###}
+                                {$vo.add_time|date='Y-m-d H:i:s'}
                             </td>
                             <td class="text-center">
                                 {if condition="$vo['status']"}

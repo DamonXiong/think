@@ -49,7 +49,7 @@
                                 {empty name="$vo.start_time"}
                                 不限时
                                 {else/}
-                                {$vo.start_time|date="Y/m/d H:i",###} - {$vo.end_time|date="Y/m/d H:i",###}
+                                {$vo.start_time|date="Y/m/d H:i"} - {$vo.end_time|date="Y/m/d H:i"}
                                 {/empty}
                             </td>
                             <td class="text-center">

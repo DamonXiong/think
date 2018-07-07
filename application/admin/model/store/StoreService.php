@@ -20,7 +20,7 @@ class StoreService extends ModelBasic
     public static function getList($mer_id){
         $model = new self;
         $model->alias('a');
-        $model->join('__USER__ b ','b.uid = a.uid');
+        $model->join('wechat_user b ','b.uid = a.uid');
         $model->field('a.*,b.nickname as wx_name');
         $model->where("mer_id",$mer_id);
         $model->order('a.id desc');

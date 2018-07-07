@@ -15,7 +15,7 @@
                 <div class="view-wrapper col-sm-4">
                     <div class="mobile-header">公众号</div>
                     <section class="view-body" style="overflow:scroll;">
-                        <div class="time-wrapper"><span class="time">9:36</span></div>
+                        <div class="time-wrapper"><span class="time">9:37</span></div>
                         <div class="view-item text-box clearfix" :class="{show:type=='text'}">
                             <div class="avatar fl"><img src="__ADMIN_SYSTEM__/images/head.gif" /></div>
                             <div class="box-content fl">
@@ -320,20 +320,19 @@
                 this.upload();
                 this.key = "{$key}"
                 this.msg = "{$title}";
-                res= {$replay_arr};
-                window.vm.type = res.type;
-                window.vm.status = res.status;
+                window.vm.type = {$replay_arr->type};
+                window.vm.status = {$replay_arr->status};
                 if(res.type == 'image') {
-                    window.vm.dataGroup.image.src = res.data.src;
+                    window.vm.dataGroup.image.src = {$replay_arr->data->src};
                 }else if(res.type == 'text'){
-                    window.vm.dataGroup.text.content = res.data.content;
+                    window.vm.dataGroup.text.content = {$replay_arr->data->content};
                 }else if(res.type == 'voice'){
-                    window.vm.dataGroup.voice.src = res.data.src;
+                    window.vm.dataGroup.voice.src = {$replay_arr->data->src};
                 }else if(res.type == 'news'){
                     window.vm.dataGroup.news = res.data;
                 }
                 if(window.vm.used_key){
-                    window.vm.keyword = res.key;
+                    window.vm.keyword = {$replay_arr->key};
                 }
             }
         });

@@ -26,7 +26,7 @@
                             </td>
                             <td class="text-center"><img src="{$vo.avatar}" class="head_image" data-image="{$vo.avatar}" width="35" height="35"></td>
                             <td class="text-center">{$vo.msn}</td>
-                            <td class="text-center">{$vo.add_time|date='Y-m-d H:i:s',###}</td>
+                            <td class="text-center">{$vo.add_time|date='Y-m-d H:i:s'}</td>
                         </tr>
                         {/volist}
                         </tbody>

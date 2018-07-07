@@ -187,7 +187,7 @@
                 <tr>
                     <td class="text-center">{$key+1}</td>
                     <td class="text-center">{$vo.nickname}</td>
-                    <td class="text-center">{$vo.add_time|date='Y-m-d H:i:s',###}</td>
+                    <td class="text-center">{$vo.add_time|date='Y-m-d H:i:s'}</td>
                     <td class="text-center">{$vo.totel_number}</td>
                     <td class="text-center">{$vo.now_money}</td>
                     <td class="text-center">

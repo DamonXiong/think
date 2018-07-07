@@ -1,10 +1,6 @@
-think\facade\Request
-
-
+<?php
 
 namespace app\admin\controller\store;
-
-
 
 use Api\Express;
 use app\admin\controller\AuthController;

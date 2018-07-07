@@ -60,7 +60,7 @@
                                 {$vo.uid|getUserNickname}/{$vo.uid}
                             </td>
                             <td class="text-center">
-                                {$vo.add_time|date='Y-m-d H:i:s',###}
+                                {$vo.add_time|date='Y-m-d H:i:s'}
                             </td>
                             <td class="text-center">
                                 {$vo.title}/{$vo.cid}
@@ -72,7 +72,7 @@
                                 {$vo.count_people}人
                             </td>
                             <td class="text-center">
-                                {$vo.stop_time|date='Y-m-d H:i:s',###}
+                                {$vo.stop_time|date='Y-m-d H:i:s'}
                             </td>
                             <td class="text-center">
                                 {if condition="$vo['status'] eq 1"}

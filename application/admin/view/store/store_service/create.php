@@ -79,7 +79,7 @@
                                         {/if}
                                     </td>
                                     <td class="text-center">
-                                        {$vo.add_time|date="Y-m-d H:i:s",###}
+                                        {$vo.add_time|date="Y-m-d H:i:s"}
                                     </td>
                                 </tr>
                                 {/volist}

@@ -179,7 +179,7 @@
 
 <!-- Peity -->
 <script src="js/plugins/peity/jquery.peity.min.js"></script>
-<script src="js/demo/peity-demo.min.js"></script>
+<!-- <script src="js/demo/peity-demo.min.js"></script> -->
 
 <!-- 自定义js -->
 <script src="js/content.min.js?v=1.0.0"></script>
@@ -199,7 +199,7 @@
 <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
 
 <!-- Sparkline demo data  -->
-<script src="js/demo/sparkline-demo.min.js"></script>
+<!-- <script src="js/demo/sparkline-demo.min.js"></script> -->
 
 <script>
     $(document).ready(function(){

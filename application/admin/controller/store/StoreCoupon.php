@@ -10,7 +10,7 @@ use service\JsonService;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UtilService;
-use think\facade\Request;
+use think\Request;
 use app\admin\model\store\StoreCoupon as CouponModel;
 use think\facade\Url;
 
@@ -46,7 +46,7 @@ class StoreCoupon extends AuthController
     }
 
     /**
-     * @return \think\facade\Response\Json
+     * @return \think\response\Json
      */
     public function rules()
     {
@@ -61,7 +61,7 @@ class StoreCoupon extends AuthController
 
     /**
      * @param Request $request
-     * @return \think\facade\Response\Json
+     * @return \think\response\Json
      */
     public function save(Request $request)
     {
@@ -85,7 +85,7 @@ class StoreCoupon extends AuthController
      * 显示编辑资源表单页.
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function edit($id)
     {
@@ -98,7 +98,7 @@ class StoreCoupon extends AuthController
      * 显示指定的资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function read($id)
     {
@@ -116,9 +116,9 @@ class StoreCoupon extends AuthController
     /**
      * 保存更新的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function update(Request $request, $id)
     {
@@ -141,7 +141,7 @@ class StoreCoupon extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function delete($id)
     {
@@ -156,7 +156,7 @@ class StoreCoupon extends AuthController
     /**
      * 修改优惠券状态
      * @param $id
-     * @return \think\facade\Response\Json
+     * @return \think\response\Json
      */
     public function status($id)
     {

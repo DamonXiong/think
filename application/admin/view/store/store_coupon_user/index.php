@@ -67,10 +67,10 @@
                                 {$vo.use_min_price}
                             </td>
                             <td class="text-center">
-                                {$vo.add_time|date='Y-m-d H:i:s',###}
+                                {$vo.add_time|date='Y-m-d H:i:s'}
                             </td>
                             <td class="text-center">
-                                {$vo.end_time|date='Y-m-d H:i:s',###}
+                                {$vo.end_time|date='Y-m-d H:i:s'}
                             </td>
                             <td class="text-center">
                                 {$vo.type == 'send' ? '后台发放' : '手动领取'}

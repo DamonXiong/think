@@ -23,7 +23,7 @@ class Reply extends AuthController
         $replay = WechatReply::where('key',input('key'))->find();
         $replay_arr = $replay->toArray();
         $replay_arr['data'] = json_decode($replay_arr['data'],true);
-        $this->assign('replay_arr',json_encode($replay_arr));
+        $this->assign('replay_arr',$replay_arr);
         $this->assign('key',input('key'));
         $this->assign('title',input('title'));
         return $this->fetch();

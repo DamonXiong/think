@@ -111,7 +111,7 @@
                             </td>
                             <td class="text-center">
 
-                                {$vo.add_time|date='Y-m-d H:i:s',###}
+                                {$vo.add_time|date='Y-m-d H:i:s'}
 
                             </td>
                             <td class="text-center">
@@ -130,7 +130,7 @@
 
                                 未通过原因：{$vo.fail_msg}
                                 <br>
-                                未通过时间：{$vo.fail_time|date='Y-m-d H:i:s',###}
+                                未通过时间：{$vo.fail_time|date='Y-m-d H:i:s'}
 
                                 {else/}
 

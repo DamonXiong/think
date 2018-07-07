@@ -56,7 +56,7 @@
                         {if condition="$orderInfo['back_integral'] GT 0"}
                         <div class="col-xs-6" style="color: #f1a417">退回积分: ￥{$orderInfo.back_integral}</div>
                         {/if}
-                        <div class="col-xs-6">创建时间: {$orderInfo.add_time|date="Y/m/d H:i",###}</div>
+                        <div class="col-xs-6">创建时间: {$orderInfo.add_time|date="Y/m/d H:i"}</div>
                         <div class="col-xs-6">支付方式:
                             {if condition="$orderInfo['paid'] eq 1"}
                                            {if condition="$orderInfo['pay_type'] eq 'weixin'"}
@@ -77,7 +77,7 @@
                             {/if}
                         </div>
                         {notempty name="orderInfo.pay_time"}
-                        <div class="col-xs-6">支付时间: {$orderInfo.pay_time|date="Y/m/d H:i",###}</div>
+                        <div class="col-xs-6">支付时间: {$orderInfo.pay_time|date="Y/m/d H:i"}</div>
                         {/notempty}
                         <div class="col-xs-6" style="color: #ff0005">用户备注: {$orderInfo.mark?:'无'}</div>
                         <div class="col-xs-6" style="color: #733b5c">商家备注: {$orderInfo.remark?:'无'}</div>

@@ -48,7 +48,7 @@
 
                    {else/}
 
-                   <div class="news-item transition active news-image" style="margin-bottom: 20px;background-image:url('/public/system/module/wechat/news/images/image.png')">
+                   <div class="news-item transition active news-image" style="margin-bottom: 20px;background-image:url('/public/static/admin/system/module/wechat/news/images/image.png')">
 
                    {/if}
 
@@ -172,7 +172,7 @@
 
                                            {else/}
 
-                                           <div class="upload-image-box transition image_img" style="background-image:url('/public/system/module/wechat/news/images/image.png')">
+                                           <div class="upload-image-box transition image_img" style="background-image:url('/public/static/admin/system/module/wechat/news/images/image.png')">
 
                                                <input value="" type="hidden" name="local_url">
 
@@ -613,7 +613,7 @@
 
         }
 
-        var url = "/public/system/module/wechat/news/images/image.png";
+        var url = "/public/static/admin/system/module/wechat/news/images/image.png";
 
         html = '';
 

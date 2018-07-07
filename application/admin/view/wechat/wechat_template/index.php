@@ -67,7 +67,7 @@
                                 <i class="fa {eq name='vo.status' value='1'}fa-check text-navy{else/}fa-close text-danger{/eq}"></i>
                             </td>
                             <td class="text-center">
-                                {$vo.add_time|date='Y-m-d H:i:s',###}
+                                {$vo.add_time|date='Y-m-d H:i:s'}
                             </td>
                             <td class="text-center">
                                 <button class="btn btn-info btn-xs" type="button"  onclick="$eb.createModalFrame('编辑','{:Url('edit',array('id'=>$vo['id']))}')"><i class="fa fa-paste"></i>编辑</button>

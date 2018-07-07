@@ -69,7 +69,7 @@
                             </td>
 
                             <td class="text-center">
-                                {$vo.add_time|date='Y-m-d H:i:s',###}
+                                {$vo.add_time|date='Y-m-d H:i:s'}
                             </td>
                             <td class="text-center">
                                 <div class="input-group-btn js-group-btn">

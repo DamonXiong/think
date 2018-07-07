@@ -28,7 +28,7 @@ class WechatReply extends ModelBasic
 
     public function getUrlAttr($value,$data)
     {
-        return $value == '' ? \think\facade\Url::build('index/index/news',['id'=>$data['id']]) : $value;
+        return $value == '' ? Url::build('index/index/news',['id'=>$data['id']]) : $value;
     }
 
     /**
