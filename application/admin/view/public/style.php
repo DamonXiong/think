@@ -5,7 +5,7 @@
     requirejs.config({
         map: {
             '*': {
-                'css': '/public/static/admin/static/plug/requirejs/require-css.js'
+                'css': '/public/admin/static/plug/requirejs/require-css.js'
             }
         },
         shim:{
@@ -18,23 +18,23 @@
         },
         baseUrl:'//'+location.hostname+'/public',
         paths: {
-            'static':'static/admin/static',
-            'system':'static/admin/system',
-            'vue':'static/admin/static/plug/vue/dist/vue.min',
-            'axios':'static/admin/static/plug/axios.min',
-            'iview':'static/admin/static/plug/iview/dist/iview.min',
-            'iviewcss':'static/admin/static/plug/iview/dist/styles/iview',
-            'lodash':'static/admin/static/plug/lodash',
-            'layer':'static/admin/static/plug/layer/layer',
-            'layercss':'static/admin/static/plug/layer/theme/default/layer',
-            'jquery':'static/admin/static/plug/jquery-1.10.2.min',
-            'moment':'static/admin/static/plug/moment',
-            'mpBuilder':'static/admin/system/util/mpBuilder',
-            'sweetalert':'static/admin/static/plug/sweetalert2/sweetalert2.all.min'
+            'static':'admin/static',
+            'system':'admin/system',
+            'vue':'admin/static/plug/vue/dist/vue.min',
+            'axios':'admin/static/plug/axios.min',
+            'iview':'admin/static/plug/iview/dist/iview.min',
+            'iviewcss':'admin/static/plug/iview/dist/styles/iview',
+            'lodash':'admin/static/plug/lodash',
+            'layer':'admin/static/plug/layer/layer',
+            'layercss':'admin/static/plug/layer/theme/default/layer',
+            'jquery':'admin/static/plug/jquery-1.10.2.min',
+            'moment':'admin/static/plug/moment',
+            'mpBuilder':'admin/system/util/mpBuilder',
+            'sweetalert':'admin/static/plug/sweetalert2/sweetalert2.all.min'
 
         },
         basket: {
-            excludes:['static/admin/system/util/mpFormBuilder','static/admin/system/js/index','static/admin/system/util/mpVueComponent','static/admin/system/util/mpVuePackage']
+            excludes:['admin/system/util/mpFormBuilder','admin/system/js/index','admin/system/util/mpVueComponent','admin/system/util/mpVuePackage']
         }
     });
 </script>

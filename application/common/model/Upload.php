@@ -97,19 +97,19 @@ class Upload extends ModelBase
 
                    // Log::record('savename ' . $info->getSaveName(), 'info');
                     // if($type=='images' && $isthumb = true){
-                    //     $path_arr= explode(DS,$info->getSaveName());
-                    //     $tmpdir=WEB_PATH . 'uploads' . DS .'thumb';
-                    //     $datedir=$tmpdir.DS.$path_arr[0];
+                    //     $path_arr= explode(DIRECTORY_SEPARATOR,$info->getSaveName());
+                    //     $tmpdir=WEB_PATH . 'uploads' . DIRECTORY_SEPARATOR .'thumb';
+                    //     $datedir=$tmpdir.DIRECTORY_SEPARATOR.$path_arr[0];
                     //     Log::record('目录 ' . $datedir, 'info');
                     //     if(!is_dir($datedir))
                     //     {
                     //         @mkdir($datedir);
                     //     }
-                    //     $smallway=$tmpdir.DS.$info->getSaveName();
+                    //     $smallway=$tmpdir.DIRECTORY_SEPARATOR.$info->getSaveName();
 
                     //     $image=Image::open(request()->file($filename));// 按照原图的比例生成一个最大为150*150的缩略图并保存为thumb.jpg
                     //     $image->thumb(150, 150)->save($smallway);
-                    //     $path = DS .'uploads' . DS .'thumb'.DS.$info->getSaveName();
+                    //     $path = DIRECTORY_SEPARATOR .'uploads' . DIRECTORY_SEPARATOR .'thumb'.DIRECTORY_SEPARATOR.$info->getSaveName();
                     // }
 
                     $path =  input('server.REQUEST_SCHEME') . '://' . input('server.SERVER_NAME').'/'.$pathname .'/'. $info->getSaveName();

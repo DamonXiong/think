@@ -12,7 +12,7 @@ use service\UtilService;
 use service\WechatService;
 use think\facade\Cache;
 use think\Collection;
-use think\facade\Request;
+use think\Request;
 use think\facade\Url;
 
 /**

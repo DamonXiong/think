@@ -6,7 +6,7 @@ use app\admin\controller\AuthController;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\facade\Request;
+use think\Request;
 use app\admin\model\wechat\ArticleCategory as ArticleCategoryModel;
 use app\admin\model\wechat\WechatNews as WechatNewsModel;
 
@@ -89,7 +89,7 @@ class WechatNews extends AuthController
      * @return \think\facade\Response\Json
      */
     public function upload_image(){
-        $res = Upload::Image($_POST['file'],'wechat/image');
+        $res = Upload::Image($_POST['file'],'admin/wechat/image');
         if(!$res->status) return Json::fail($res->error);
         return Json::successful('上传成功!',['url'=>$res->filePath]);
     }

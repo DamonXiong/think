@@ -11,7 +11,7 @@ namespace app\admin\controller\user;
 use app\admin\controller\AuthController;
 use app\admin\library\FormBuilder;
 use service\JsonService;
-use think\facade\Request;
+use think\Request;
 use service\UtilService as Util;
 use think\facade\Url;
 class UserExtract extends AuthController

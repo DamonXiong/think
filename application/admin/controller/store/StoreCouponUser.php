@@ -9,7 +9,7 @@ use service\JsonService as Json;
 use app\admin\model\store\StoreCoupon as CouponModel;
 use app\admin\model\store\StoreCouponUser as CouponUserModel;
 use app\admin\model\wechat\WechatUser as UserModel;
-use think\facade\Request;
+use think\Request;
 
 /**
  * 优惠券发放记录控制器

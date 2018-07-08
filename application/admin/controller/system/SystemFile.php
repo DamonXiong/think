@@ -2,7 +2,7 @@
 
 namespace app\admin\controller\system;
 
-use think\facade\Request;
+use think\Request;
 use think\facade\Url;
 use app\admin\model\system\SystemFile as SystemFileModel;
 

@@ -127,7 +127,7 @@ class StoreProduct extends AuthController
      */
     public function upload()
     {
-        $res = Upload::image('file','store/product');
+        $res = Upload::image('file','admin/store/product');
         $thumbPath = Upload::thumb($res->dir);
         if($res->status == 200)
             return Json::successful('图片上传成功!',['name'=>$res->fileInfo->getSaveName(),'url'=>Upload::pathToUrl($thumbPath)]);

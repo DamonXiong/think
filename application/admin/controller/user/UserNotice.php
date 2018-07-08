@@ -5,7 +5,7 @@ use app\admin\controller\AuthController;
 use app\admin\library\FormBuilder;
 use service\UtilService as Util;
 use service\JsonService as Json;
-use think\facade\Request;
+use think\Request;
 use think\facade\Url;
 use app\admin\model\user\UserNotice as UserNoticeModel;
 use app\admin\model\user\UserNoticeSee as UserNoticeSeeModel;
@@ -45,7 +45,7 @@ class UserNotice extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @return \think\facade\Response
      */
     public function save(Request $request){
@@ -82,7 +82,7 @@ class UserNotice extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @return \think\facade\Response
      */
     public function update(Request $request,$id)
@@ -157,7 +157,7 @@ class UserNotice extends AuthController
     /**
      * 添加发送信息的用户
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @return \think\facade\Response
      */
     public function user_create($id){
@@ -174,7 +174,7 @@ class UserNotice extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @return \think\facade\Response
      */
     public function user_save(Request $request,$id){
@@ -240,7 +240,7 @@ class UserNotice extends AuthController
     /**
      * 删除指定的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @return \think\facade\Response
      */
     public function user_select_delete(Request $request,$id){

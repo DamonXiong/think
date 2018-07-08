@@ -7,7 +7,7 @@ use app\admin\library\FormBuilder;
 use service\JsonService;
 use service\UtilService as Util;
 use service\JsonService as Json;
-use think\facade\Request;
+use think\Request;
 use app\admin\model\system\SystemRole;
 use think\facade\Url;
 use app\admin\model\system\SystemAdmin as AdminModel;
@@ -74,7 +74,7 @@ class SystemAdmin extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @return \think\facade\Response
      */
     public function save(Request $request)
@@ -140,7 +140,7 @@ class SystemAdmin extends AuthController
     /**
      * 保存更新的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @param  int  $id
      * @return \think\facade\Response
      */

@@ -17,7 +17,7 @@ use service\UtilService;
 use traits\CurdControllerTrait;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\facade\Request;
+use think\Request;
 use think\facade\Url;
 use app\admin\model\store\StoreBargain as StoreBargainModel;
 
@@ -68,7 +68,7 @@ class StoreBargain extends AuthController
      */
     public function upload()
     {
-        $res = Upload::image('file','store/bargain');
+        $res = Upload::image('file','admin/store/bargain');
         $thumbPath = Upload::thumb($res->dir);
         if($res->status == 200)
             return Json::successful('图片上传成功!',['name'=>$res->fileInfo->getSaveName(),'url'=>Upload::pathToUrl($thumbPath)]);
@@ -133,7 +133,7 @@ class StoreBargain extends AuthController
     /**
      * 保存更新的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @param  int  $id
      * @return \think\facade\Response
      */

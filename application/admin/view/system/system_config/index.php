@@ -204,7 +204,7 @@
                                  <!--单图-->{else/}
                                                 <div style="display: inline-flex;">
                                                     <input type="file" class="{$vo.menu_name}_1" name="{$vo.menu_name}" style="display: none;" data-name="{$vo.menu_name}" id="{$vo.menu_name}" data-type = "{$vo.upload_type}" />
-                                                    <div class="flag" style="width: 100px;height: 80px;background-image:url('/public/static/admin/system/module/wechat/news/images/image.png');cursor: pointer"  data-name="{$vo.menu_name}" >
+                                                    <div class="flag" style="width: 100px;height: 80px;background-image:url('/public/admin/system/module/wechat/news/images/image.png');cursor: pointer"  data-name="{$vo.menu_name}" >
                                                     </div>
                                                     {if condition="$num_img LT 1"}
                                                             <div class="file-box">
@@ -368,6 +368,7 @@
 
     function ajaxFileUpload(is) {
         bool_upload_num = $(is).data('type');
+        debugger;
         $.ajaxFileUpload({
             url: "{:url('view_upload')}",
             data:{file: $(is).data('name'),type:bool_upload_num},
@@ -413,6 +414,7 @@
             data:'url='+image,
             type:'get',
             success:function (re) {
+                re = JSON.parse(re);
                 if(re.code == 200){
                     $eb.message('success',re.msg);
                 }else{

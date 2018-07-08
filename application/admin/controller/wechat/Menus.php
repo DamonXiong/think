@@ -5,7 +5,7 @@ use app\admin\controller\AuthController;
 use service\WechatService;
 use think\facade\Cache;
 use think\Db;
-use think\facade\Request;
+use think\Request;
 
 /**
  * 微信菜单  控制器

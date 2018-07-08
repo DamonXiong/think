@@ -6,7 +6,7 @@ use app\admin\controller\AuthController;
 use app\admin\library\FormBuilder;
 use service\UtilService as Util;
 use service\JsonService as Json;
-use think\facade\Request;
+use think\Request;
 use think\facade\Url;
 
 /**

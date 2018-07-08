@@ -8,7 +8,7 @@ use service\UtilService as Util;
 use service\JsonService as Json;
 use service\WechatTemplateService;
 use think\facade\Cache;
-use think\facade\Request;
+use think\Request;
 use think\facade\Url;
 use app\admin\model\wechat\WechatTemplate as WechatTemplateModel;
 use app\admin\model\system\SystemConfig;

@@ -34,10 +34,10 @@ return [
     'tpl_replace_string' => [
         '__ROOT__' => WEB_URL,
         '__UPLOADS__' => WEB_URL . '/uploads',
-        '__ADMIN__' => WEB_URL . '/static/admin',
-        '__ADMIN_SYSTEM__' => WEB_URL . '/static/admin/system',
-        '__ADMIN_FRAME__' => WEB_URL . '/static/admin/system/frame',
-        '__ADMIN_MODOULE__' => WEB_URL . '/static/admin/system/module',
-        '__ADMIN_PLUG__' => WEB_URL . '/static/admin/static/plug',
+        '__ADMIN__' => WEB_URL . '/admin',
+        '__ADMIN_SYSTEM__' => WEB_URL . '/admin/system',
+        '__ADMIN_FRAME__' => WEB_URL . '/admin/system/frame',
+        '__ADMIN_MODOULE__' => WEB_URL . '/admin/system/module',
+        '__ADMIN_PLUG__' => WEB_URL . '/admin/static/plug',
     ],
 ];

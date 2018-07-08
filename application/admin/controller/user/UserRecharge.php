@@ -9,7 +9,7 @@ use service\UtilService as Util;
 use service\JsonService as Json;
 use think\facade\Url;
 use app\admin\library\FormBuilder;
-use think\facade\Request;
+use think\Request;
 use service\HookService;
 use behavior\wechat\PaymentBehavior;
 use service\WechatTemplateService;

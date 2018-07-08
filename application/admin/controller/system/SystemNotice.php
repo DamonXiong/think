@@ -8,7 +8,7 @@ use app\admin\model\system\SystemAdmin;
 use app\admin\model\system\SystemNotice as NoticeModel;
 use service\JsonService;
 use service\UtilService;
-use think\facade\Request;
+use think\Request;
 use think\facade\Url;
 
 

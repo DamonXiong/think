@@ -8,7 +8,7 @@ use think\facade\Url;
 
 use app\admin\library\FormBuilder;
 
-use think\facade\Request;
+use think\Request;
 
 use service\UtilService as Util;
 

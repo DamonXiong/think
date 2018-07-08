@@ -48,7 +48,7 @@ class StoreService extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @return \think\facade\Response
      */
     public function save(Request $request){
@@ -86,7 +86,7 @@ class StoreService extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @return \think\facade\Response
      */
     public function update(Request $request,$id)
@@ -118,7 +118,7 @@ class StoreService extends AuthController
      */
     public function upload()
     {
-        $res = Upload::image('file','store/service');
+        $res = Upload::image('file','admin/store/service');
         $thumbPath = Upload::thumb($res->dir);
         if($res->status == 200)
             return Json::successful('图片上传成功!',['name'=>$res->fileInfo->getSaveName(),'url'=>Upload::pathToUrl($thumbPath)]);

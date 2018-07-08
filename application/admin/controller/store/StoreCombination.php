@@ -8,7 +8,7 @@ use traits\CurdControllerTrait;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\facade\Request;
+use think\Request;
 use app\admin\model\store\StoreProduct as ProductModel;
 use app\admin\model\store\StoreCombination as StoreCombinationModel;
 use think\facade\Url;
@@ -87,7 +87,7 @@ class StoreCombination extends AuthController
      */
     public function upload()
     {
-        $res = Upload::image('file','store/product');
+        $res = Upload::image('file','admin/store/product');
         $thumbPath = Upload::thumb($res->dir);
         if($res->status == 200)
             return Json::successful('图片上传成功!',['name'=>$res->fileInfo->getSaveName(),'url'=>Upload::pathToUrl($thumbPath)]);
@@ -98,7 +98,7 @@ class StoreCombination extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @return \think\facade\Response
      */
     public function save(Request $request)
@@ -208,7 +208,7 @@ class StoreCombination extends AuthController
     /**
      * 保存更新的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @param  int  $id
      * @return \think\facade\Response
      */

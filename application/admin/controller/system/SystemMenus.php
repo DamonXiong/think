@@ -7,7 +7,7 @@ use traits\CurdControllerTrait;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\facade\Request;
+use think\Request;
 use think\facade\Url;
 use app\admin\model\system\SystemMenus as MenusModel;
 use app\admin\controller\AuthController;
@@ -46,7 +46,7 @@ class SystemMenus extends AuthController
 
     public function upload()
     {
-        $res = Upload::Image('file','config');
+        $res = Upload::Image('file','admin/config');
         if(!$res->status) return Json::fail($res->error);
         $thumbPath = Upload::thumb($res->dir);
         return Json::successful('图片上传成功!',['name'=>$res->fileInfo->getSaveName(),'url'=>Upload::pathToUrl($thumbPath)]);
@@ -104,7 +104,7 @@ class SystemMenus extends AuthController
     /**
      * 保存新建的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @return \think\facade\Response
      */
     public function save(Request $request)
@@ -170,7 +170,7 @@ class SystemMenus extends AuthController
     /**
      * 保存更新的资源
      *
-     * @param  \think\facade\Request  $request
+     * @param  \think\Request  $request
      * @param  int  $id
      * @return \think\facade\Response
      */

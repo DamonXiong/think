@@ -7,7 +7,7 @@ use app\admin\library\FormBuilder;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\facade\Request;
+use think\Request;
 use think\facade\Url;
 use app\admin\model\wechat\ArticleCategory as ArticleCategoryModel;
 use app\admin\model\wechat\WechatNews as WechatNewsModel;
@@ -67,7 +67,7 @@ class StoreInfoMana extends AuthController
      * s上传图片
      * */
     public function upload(){
-        $res = Upload::image('file','article');
+        $res = Upload::image('file','admin/article');
         $thumbPath = Upload::thumb($res->dir);
         if($res->status == 200)
             return Json::successful('图片上传成功!',['name'=>$res->fileInfo->getSaveName(),'url'=>Upload::pathToUrl($thumbPath)]);

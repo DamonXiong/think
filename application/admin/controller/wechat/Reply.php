@@ -7,7 +7,7 @@ use app\admin\model\wechat\WechatReply;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
-use think\facade\Request;
+use think\Request;
 
 /**
  * 关键字管理  控制器
@@ -75,7 +75,7 @@ class Reply extends AuthController
     {
         $name = $request->post('file');
         if (!$name) return Json::fail('请上传图片');
-        $res = Upload::image($name, 'wechat/image');
+        $res = Upload::image($name, 'admin/wechat/image');
         return $res->status === true ? Json::successful('上传成功', $res->filePath) : Json::fail($res->error);
     }
 
@@ -84,7 +84,7 @@ class Reply extends AuthController
         $name = $request->post('file');
         if (!$name) return Json::fail('请上传声音');
         $autoValidate['size'] = 2097152;
-        $res = Upload::file($name, 'wechat/voice', true, $autoValidate);
+        $res = Upload::file($name, 'admin/wechat/voice', true, $autoValidate);
         return $res->status === true ? Json::successful('上传成功', $res->filePath) : Json::fail($res->error);
     }
 

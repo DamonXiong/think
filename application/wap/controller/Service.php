@@ -11,19 +11,19 @@ use app\wap\model\store\StoreService;
 use service\SystemConfigService;
 use app\wap\model\user\User;
 use app\admin\model\system\Merchant;
-use think\Request;
+use think\facade\Request;
 
 class Service extends AuthController
 {
     public function service_list(Request $request){
-        $params = Request::instance()->param();
+        $params = Request::param();
         $merchant = isset($params['mer_id']) && $params['mer_id'] > 0 ? Merchant::where('id',$params['mer_id'])->find() : array("id"=>0,"mer_name"=>"");
         $list = StoreService::field('uid,avatar,nickname')->where('mer_id',$merchant['id'])->where('status',1)->order("id desc")->select();
         $this->assign(compact('list','merchant'));
         return $this->fetch();
     }
     public function service_ing(Request $request){
-        $params = Request::instance()->param();
+        $params = Request::param();
         $to_uid = $params['to_uid'];
         $merchant = isset($params['mer_id']) && $params['mer_id'] > 0 ? Merchant::where('id',$params['mer_id'])->find() : array("id"=>0,"mer_name"=>"");
         if(!isset($to_uid) || empty($to_uid))$this->failed('未获取到接收用户信息！');
