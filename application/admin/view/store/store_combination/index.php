@@ -64,10 +64,10 @@
                                 <img src="{$vo.image}" alt="{$vo.store_name}" class="open_image" data-image="{$vo.image}" style="width: 50px;height: 50px;cursor: pointer;">
                             </td>
                             <td class="text-center">
-                                {$vo.start_time|date="Y-m-d H:i:s"}
+                                {$vo.start_time|date="Y-m-d H:i:s",###}
                             </td>
                             <td class="text-center">
-                                {$vo.stop_time|date="Y-m-d H:i:s"}
+                                {$vo.stop_time|date="Y-m-d H:i:s",###}
                             </td>
                             <td class="text-center">
                                 {$vo.people}

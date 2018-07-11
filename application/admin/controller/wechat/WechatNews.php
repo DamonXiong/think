@@ -86,10 +86,10 @@ class WechatNews extends AuthController
 
     /**
      * 上传图文图片
-     * @return \think\facade\Response\Json
+     * @return \think\response\Json
      */
     public function upload_image(){
-        $res = Upload::Image($_POST['file'],'admin/wechat/image');
+        $res = Upload::Image($_POST['file'],'wechat/image');
         if(!$res->status) return Json::fail($res->error);
         return Json::successful('上传成功!',['url'=>$res->filePath]);
     }
@@ -97,7 +97,7 @@ class WechatNews extends AuthController
     /**
      * 添加和修改图文
      * @param Request $request
-     * @return \think\facade\Response\Json
+     * @return \think\response\Json
      */
     public function add_new(Request $request){
         $post  = $request->post();
@@ -158,7 +158,7 @@ class WechatNews extends AuthController
     /**
      * 删除图文
      * @param $id
-     * @return \think\facade\Response\Json
+     * @return \think\response\Json
      */
     public function delete($id)
     {

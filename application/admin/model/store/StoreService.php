@@ -17,42 +17,37 @@ class StoreService extends ModelBasic
     /**
      * @return array
      */
-    public static function getList($mer_id)
-    {
+    public static function getList($mer_id){
         $model = new self;
-        $modelNew = $model->alias('a')
-            ->join('wechat_user b ', 'b.uid = a.uid')
-            ->field('a.*,b.nickname as wx_name')
-            ->where("mer_id", $mer_id)
-            ->order('a.id desc');
-        // $subsql = $model->hasOne('app\admin\model\wechat\WechatUser', 'uid', 'id')->bind([
-        //     'wx_name' => 'nickname',
-        // ])->where("mer_id", $mer_id)->order('id desc')->fetchSql(true)->select();
-        return self::page($modelNew, function ($item, $key) {
+        $model->alias('a');
+        $model->join('__USER__ b ','b.uid = a.uid');
+        $model->field('a.*,b.nickname as wx_name');
+        $model->where("mer_id",$mer_id);
+        $model->order('a.id desc');
+        return self::page($model,function($item,$key){
         });
     }
 
     /**
      * @return array
      */
-    public static function getChatUser($now_service, $mer_id)
-    {
-        $where = 'mer_id = ' . $mer_id . ' AND (uid = ' . $now_service["uid"] . ' OR to_uid=' . $now_service["uid"] . ')';
+    public static function getChatUser($now_service,$mer_id){
+        $where = 'mer_id = '.$mer_id.' AND (uid = '.$now_service["uid"].' OR to_uid='.$now_service["uid"].')';
         $chat_list = ServiceLogModel::field("uid,to_uid")->where($where)->group("uid,to_uid")->select();
-        if (count($chat_list) > 0) {
+        if(count($chat_list) > 0){
             $arr_user = $arr_to_user = [];
             foreach ($chat_list as $key => $value) {
-                array_push($arr_user, $value["uid"]);
-                array_push($arr_to_user, $value["to_uid"]);
+                array_push($arr_user,$value["uid"]);
+                array_push($arr_to_user,$value["to_uid"]);
             }
-            $uids = array_merge($arr_user, $arr_to_user);
+            $uids = array_merge($arr_user,$arr_to_user);
 
-            $list = WechatUser::field("uid,nickname,headimgurl")->where(array("uid" => array(array("in", $uids), array("neq", $now_service["uid"]))))->select();
+            $list = WechatUser::field("uid,nickname,headimgurl")->where(array("uid"=>array(array("in",$uids),array("neq",$now_service["uid"]))))->select();
             foreach ($list as $index => $user) {
-                $service = self::field("uid,nickname,avatar as headimgurl")->where(array("uid" => $user["uid"]))->find();
-                if ($service) $list[$index] = $service;
+                $service = self::field("uid,nickname,avatar as headimgurl")->where(array("uid"=>$user["uid"]))->find();
+                if($service)$list[$index] = $service;
             }
-        } else {
+        }else{
             $list = null;
         }
         return $list;

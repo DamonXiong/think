@@ -1,11 +1,11 @@
 {extend name="public/container"}
 {block name="head_top"}
-<link rel="stylesheet" href="__ADMIN_PLUG__/daterangepicker/daterangepicker.css">
-<link href="__ADMIN_FRAME__/css/plugins/footable/footable.core.css" rel="stylesheet">
-<script src="__ADMIN_PLUG__/sweetalert2/sweetalert2.all.min.js"></script>
-<script src="__ADMIN_PLUG__/moment.js"></script>
-<script src="__ADMIN_PLUG__/daterangepicker/daterangepicker.js"></script>
-<script src="__ADMIN_PLUG__/echarts.common.min.js"></script>
+<link rel="stylesheet" href="{__PLUG_PATH}daterangepicker/daterangepicker.css">
+<link href="{__FRAME_PATH}css/plugins/footable/footable.core.css" rel="stylesheet">
+<script src="{__PLUG_PATH}sweetalert2/sweetalert2.all.min.js"></script>
+<script src="{__PLUG_PATH}moment.js"></script>
+<script src="{__PLUG_PATH}daterangepicker/daterangepicker.js"></script>
+<script src="{__PLUG_PATH}echarts.common.min.js"></script>
 <style>
     .btn-group-sm>.btn, .btn-sm{
          padding: 4px 10px;
@@ -187,7 +187,7 @@
                 <tr>
                     <td class="text-center">{$key+1}</td>
                     <td class="text-center">{$vo.nickname}</td>
-                    <td class="text-center">{$vo.add_time|date='Y-m-d H:i:s'}</td>
+                    <td class="text-center">{$vo.add_time|date='Y-m-d H:i:s',###}</td>
                     <td class="text-center">{$vo.totel_number}</td>
                     <td class="text-center">{$vo.now_money}</td>
                     <td class="text-center">
@@ -209,7 +209,7 @@
 </div>
 {/block}
 {block name="script"}
-<script src="__ADMIN_FRAME__/js/content.min.js?v=1.0.0"></script>
+<script src="{__FRAME_PATH}js/content.min.js?v=1.0.0"></script>
 <script>
     $('.search-item>.btn').on('click',function(){
         var that = $(this),value = that.data('value'),p = that.parent(),name = p.data('name'),form = p.parents();

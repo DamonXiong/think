@@ -86,7 +86,7 @@
                     {volist name="storeSeckill" id="vo"}
                     <li class="flex">
                         <div class="picture"><img src="{$vo.image}" alt="">
-                            <div class="count-down flex countdown" data-time="{$vo.stop_time|date='Y/m/d H:i:s'}">
+                            <div class="count-down flex countdown" data-time="{$vo.stop_time|date='Y/m/d H:i:s',###}">
                                 <span class="hours">00</span>
                                 <em>:</em>
                                 <span class="minutes">00</span>

@@ -69,7 +69,7 @@ class StoreCouponUser extends AuthController
      * 发放优惠券到指定个人
      * @param $id
      * @param $uid
-     * @return \think\facade\Response\Json
+     * @return \think\response\Json
      */
     public function grant($id,$uid){
         if(!$id) return Json::fail('数据不存在!');

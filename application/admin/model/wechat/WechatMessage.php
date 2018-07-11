@@ -9,7 +9,7 @@ namespace app\admin\model\wechat;
 
 
 use app\admin\model\user\User;
-use think\facade\Cache;
+use think\Cache;
 use traits\ModelTrait;
 use basic\ModelBasic;
 use app\admin\model\wechat\WechatUser as UserModel;

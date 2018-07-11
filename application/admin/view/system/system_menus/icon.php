@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -5,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0">
-    <link href="__ADMIN_FRAME__/css/bootstrap.min.css" rel="stylesheet">
-    <link href="__ADMIN_FRAME__/css/font-awesome.min.css" rel="stylesheet">
-    <script src="__ADMIN_FRAME__/js/jquery.min.js"></script>
+    <link href="{__FRAME_PATH}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{__FRAME_PATH}css/font-awesome.min.css" rel="stylesheet">
+    <script src="{__FRAME_PATH}js/jquery.min.js"></script>
     <style>
         .icons-box{padding-left: 20px;}
         .list-inline li{width: 3rem;

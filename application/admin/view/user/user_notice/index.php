@@ -37,7 +37,7 @@
                             <td class="text-center">
                                 {if condition="$vo['is_send'] eq 1"}
                                     状态：<span style="color:green;">已发送</span><br />
-                                    时间：{$vo.send_time|date='Y-m-d H:i:s'}
+                                    时间：{$vo.send_time|date='Y-m-d H:i:s',###}
                                 {else /}
                                     状态：<span style="color:red;">未发送</span> <a class="btn-send" data-url="{:Url('send',array('id'=>$vo['id']))}">立即发送</a>
                                 {/if}

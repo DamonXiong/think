@@ -1,9 +1,9 @@
 {extend name="public/container"}
 {block name="head_top"}
-<script src="__ADMIN_PLUG__/sweetalert2/sweetalert2.all.min.js"></script>
-<script src="__ADMIN_PLUG__/moment.js"></script>
-<link rel="stylesheet" href="__ADMIN_PLUG__/daterangepicker/daterangepicker.css">
-<script src="__ADMIN_PLUG__/daterangepicker/daterangepicker.js"></script>
+<script src="{__PLUG_PATH}sweetalert2/sweetalert2.all.min.js"></script>
+<script src="{__PLUG_PATH}moment.js"></script>
+<link rel="stylesheet" href="{__PLUG_PATH}daterangepicker/daterangepicker.css">
+<script src="{__PLUG_PATH}daterangepicker/daterangepicker.js"></script>
 {/block}
 {block name="content"}
 <div class="row">
@@ -60,7 +60,7 @@
                                 {$vo.uid|getUserNickname}/{$vo.uid}
                             </td>
                             <td class="text-center">
-                                {$vo.add_time|date='Y-m-d H:i:s'}
+                                {$vo.add_time|date='Y-m-d H:i:s',###}
                             </td>
                             <td class="text-center">
                                 {$vo.title}/{$vo.cid}
@@ -72,7 +72,7 @@
                                 {$vo.count_people}人
                             </td>
                             <td class="text-center">
-                                {$vo.stop_time|date='Y-m-d H:i:s'}
+                                {$vo.stop_time|date='Y-m-d H:i:s',###}
                             </td>
                             <td class="text-center">
                                 {if condition="$vo['status'] eq 1"}

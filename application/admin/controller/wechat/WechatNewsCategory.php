@@ -7,7 +7,7 @@ use app\admin\library\FormBuilder;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use think\Request;
-use think\facade\Url;
+use think\Url;
 
 /**
  * 图文信息

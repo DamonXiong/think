@@ -144,13 +144,13 @@
 
                             <td class="text-center">
 
-                                {$vo.add_time|date='Y-m-d H:i:s'}
+                                {$vo.add_time|date='Y-m-d H:i:s',###}
 
                             </td>
 
                             <td class="text-center">
 
-                                {$vo.apply_time|date='Y-m-d H:i:s'}
+                                {$vo.apply_time|date='Y-m-d H:i:s',###}
 
                             </td>
 
@@ -160,7 +160,7 @@
 
                                 审核通过<br/>
 
-                                通过时间：{$vo.success_time|date='Y-m-d H:i:s'}
+                                通过时间：{$vo.success_time|date='Y-m-d H:i:s',###}
 
                                 {elseif condition="$vo['status'] eq -1"/}
 
@@ -168,7 +168,7 @@
 
                                 未通过原因：{$vo.fail_message}
 
-                                未通过时间：{$vo.fail_time|date='Y-m-d H:i:s'}
+                                未通过时间：{$vo.fail_time|date='Y-m-d H:i:s',###}
 
                                 {else/}
 

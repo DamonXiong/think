@@ -13,7 +13,7 @@ use app\admin\library\FormBuilder;
 use service\JsonService;
 use think\Request;
 use service\UtilService as Util;
-use think\facade\Url;
+use think\Url;
 class UserExtract extends AuthController
 {
    public function index(){

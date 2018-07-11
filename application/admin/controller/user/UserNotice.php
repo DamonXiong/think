@@ -6,7 +6,7 @@ use app\admin\library\FormBuilder;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use think\Request;
-use think\facade\Url;
+use think\Url;
 use app\admin\model\user\UserNotice as UserNoticeModel;
 use app\admin\model\user\UserNoticeSee as UserNoticeSeeModel;
 use app\admin\model\wechat\WechatUser as UserModel;
@@ -20,7 +20,7 @@ class UserNotice extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function index()
     {
@@ -31,7 +31,7 @@ class UserNotice extends AuthController
     /**
      * 显示创建资源表单页.
      *
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function create(){
         FormBuilder::text('user','发送人','系统管理员');
@@ -46,7 +46,7 @@ class UserNotice extends AuthController
      * 保存新建的资源
      *
      * @param  \think\Request  $request
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function save(Request $request){
         $params = $request->post();
@@ -66,7 +66,7 @@ class UserNotice extends AuthController
      * 显示编辑资源表单页.
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function edit($id)
     {
@@ -83,7 +83,7 @@ class UserNotice extends AuthController
      * 保存新建的资源
      *
      * @param  \think\Request  $request
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function update(Request $request,$id)
     {
@@ -99,7 +99,7 @@ class UserNotice extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function send($id)
     {
@@ -111,7 +111,7 @@ class UserNotice extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function delete($id)
     {
@@ -125,7 +125,7 @@ class UserNotice extends AuthController
      * 查询发送信息的用户资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function user($id){
         $notice = UserNoticeModel::get($id)->toArray();
@@ -158,7 +158,7 @@ class UserNotice extends AuthController
      * 添加发送信息的用户
      *
      * @param  \think\Request  $request
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function user_create($id){
         $where = Util::getMore([
@@ -175,7 +175,7 @@ class UserNotice extends AuthController
      * 保存新建的资源
      *
      * @param  \think\Request  $request
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function user_save(Request $request,$id){
         $notice = UserNoticeModel::get($id)->toArray();
@@ -219,7 +219,7 @@ class UserNotice extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function user_delete($id,$uid)
     {
@@ -241,7 +241,7 @@ class UserNotice extends AuthController
      * 删除指定的资源
      *
      * @param  \think\Request  $request
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function user_select_delete(Request $request,$id){
         $params = $request->post();

@@ -24,7 +24,7 @@
                                 {$vo.change_message}
                             </td>
                             <td class="text-center">
-                                {$vo.change_time|date='Y-m-d H:i:s'}
+                                {$vo.change_time|date='Y-m-d H:i:s',###}
                             </td>
                         </tr>
                         {/volist}

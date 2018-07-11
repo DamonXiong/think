@@ -91,11 +91,11 @@
             <div class="delivery-con">
                 <ul>
                     <li>订单编号：{$order.order_id}</li>
-                    <li>下单时间：{$order.add_time|date="Y-m-d H:i"}</li>
+                    <li>下单时间：{$order.add_time|date="Y-m-d H:i",###}</li>
                     <li>支付方式：{$order._status._payType}</li>
                     <li>支付状态：{$order.paid == 1 ? '已支付' : '未支付'}</li>
                     {eq name="order.paid" value="1"}
-                    <li>支付时间：{$order.pay_time|date="Y-m-d H:i"}</li>
+                    <li>支付时间：{$order.pay_time|date="Y-m-d H:i",###}</li>
                     {/eq}
                 </ul>
             </div>

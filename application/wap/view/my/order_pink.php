@@ -97,7 +97,7 @@
                             <div class="pk-number-con-time" v-pre>
                                 剩余
                                 <div style="height: .1rem"></div>
-                                <div class="count-time" data-time="{$pinkT.stop_time|date='Y/m/d H:i:s'}">
+                                <div class="count-time" data-time="{$pinkT.stop_time|date='Y/m/d H:i:s',###}">
                                     <span class="hours">00</span>
                                     :
                                     <span class="minutes">00</span>
@@ -117,7 +117,7 @@
                             <div class="pk-number-con-time" v-pre>
                                 剩余
                                 <div style="height: .1rem"></div>
-                                <div class="count-time" data-time="{$pinkT.stop_time|date='Y/m/d H:i:s'}">
+                                <div class="count-time" data-time="{$pinkT.stop_time|date='Y/m/d H:i:s',###}">
                                     <span class="hours">00</span>
                                     :
                                     <span class="minutes">00</span>

@@ -26,7 +26,7 @@ use app\wap\model\user\UserAddress;
 use app\wap\model\user\UserSign;
 use service\CacheService;
 use service\SystemConfigService;
-use think\facade\Request;
+use think\Request;
 use think\Url;
 
 class My extends AuthController
@@ -212,7 +212,7 @@ class My extends AuthController
 
     public function commission()
     {
-        $uid = (int)Request::get('uid',0);
+        $uid = (int)Request::instance()->get('uid',0);
         if(!$uid) return $this->failed('用户不存在!');
         $this->assign(['uid'=>$uid]);
         return $this->fetch();

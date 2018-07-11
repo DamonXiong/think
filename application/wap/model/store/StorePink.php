@@ -35,7 +35,7 @@ class StorePink extends ModelBasic
         $model = $model->alias('p');
         $model = $model->field('p.*,u.nickname,u.avatar');
         $model = $model->where('id',$id);
-        $model = $model->join('wechat_user u','u.uid = p.uid');
+        $model = $model->join('__USER__ u','u.uid = p.uid');
         $list = $model->find();
         if($list) return $list->toArray();
         else return [];
@@ -52,7 +52,7 @@ class StorePink extends ModelBasic
         $model = $model->field('p.*,u.nickname,u.avatar');
         $model = $model->where('k_id',$id);
         $model = $model->where('is_refund',0);
-        $model = $model->join('wechat_user u','u.uid = p.uid');
+        $model = $model->join('__USER__ u','u.uid = p.uid');
         $model = $model->order('id asc');
         $list = $model->select();
         if($list) return $list->toArray();
@@ -83,7 +83,7 @@ class StorePink extends ModelBasic
         $model = $model->where('k_id',0);
         $model = $model->where('is_refund',0);
         $model = $model->order('add_time desc');
-        $model = $model->join('wechat_user u','u.uid = p.uid');
+        $model = $model->join('__USER__ u','u.uid = p.uid');
         $list = $model->select();
         if($list) return $list->toArray();
         else return [];

@@ -1,10 +1,10 @@
 {extend name="public/container"}
 {block name="head_top"}
-<link rel="stylesheet" type="text/css" href="__ADMIN_SYSTEM__/css/main.css" />
-<script src="__ADMIN_FRAME__/js/bootstrap.min.js"></script>
-<script src="__ADMIN_FRAME__/js/content.min.js"></script>
-<script src="__ADMIN_SYSTEM__/frame/js/ajaxfileupload.js"></script>
-<script src="__ADMIN_PLUG__/moment.js"></script>
+<link rel="stylesheet" type="text/css" href="{__ADMIN_PATH}css/main.css" />
+<script src="{__FRAME_PATH}js/bootstrap.min.js"></script>
+<script src="{__FRAME_PATH}js/content.min.js"></script>
+<script src="{__ADMIN_PATH}frame/js/ajaxfileupload.js"></script>
+<script src="{__PLUG_PATH}moment.js"></script>
 {/block}
 {block name="content"}
 <div id="app" class="row">
@@ -17,7 +17,7 @@
                     <section class="view-body" style="overflow:scroll;">
                         <div class="time-wrapper"><span class="time">9:36</span></div>
                         <div class="view-item text-box clearfix" :class="{show:type=='text'}">
-                            <div class="avatar fl"><img src="__ADMIN_SYSTEM__/images/head.gif" /></div>
+                            <div class="avatar fl"><img src="{__ADMIN_PATH}images/head.gif" /></div>
                             <div class="box-content fl">
                                 {{dataGroup.text.content}}
                             </div>
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="view-item text-box clearfix" :class="{show:type=='image'}">
-                            <div class="avatar fl"><img src="__ADMIN_SYSTEM__/images/head.gif" /></div>
+                            <div class="avatar fl"><img src="{__ADMIN_PATH}images/head.gif" /></div>
                             <div class="box-content fl">
                                 <img class="picbox" :src="dataGroup.image.src" alt="" />
                             </div>

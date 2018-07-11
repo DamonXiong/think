@@ -7,7 +7,7 @@ use app\admin\model\user\UserRecharge as UserRechargeModel;
 use app\wap\model\user\UserBill;
 use service\UtilService as Util;
 use service\JsonService as Json;
-use think\facade\Url;
+use think\Url;
 use app\admin\library\FormBuilder;
 use think\Request;
 use service\HookService;

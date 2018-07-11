@@ -8,7 +8,7 @@
 namespace app\admin\library\formBuilderDriver;
 
 
-use think\facade\Url;
+use think\Url;
 
 class Upload extends Driver
 {

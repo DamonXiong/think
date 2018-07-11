@@ -41,7 +41,7 @@
                     <li class="flex">
                         <div class="left-wrapper">
                             <p>每日签到奖励</p>
-                            <span>{$vo.add_time|date="Y-m-d"}</span>
+                            <span>{$vo.add_time|date="Y-m-d",###}</span>
                         </div>
                         <i class="right-wrapper">+{$vo.number}</i>
                     </li>

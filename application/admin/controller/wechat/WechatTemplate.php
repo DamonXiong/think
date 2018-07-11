@@ -7,9 +7,9 @@ use app\admin\library\FormBuilder;
 use service\UtilService as Util;
 use service\JsonService as Json;
 use service\WechatTemplateService;
-use think\facade\Cache;
+use think\Cache;
 use think\Request;
-use think\facade\Url;
+use think\Url;
 use app\admin\model\wechat\WechatTemplate as WechatTemplateModel;
 use app\admin\model\system\SystemConfig;
 
@@ -83,7 +83,7 @@ class WechatTemplate extends AuthController
     /**
      * 编辑模板消息
      * @param $id
-     * @return mixed|\think\facade\Response\Json|void
+     * @return mixed|\think\response\Json|void
      */
     public function edit($id)
     {
@@ -124,7 +124,7 @@ class WechatTemplate extends AuthController
     /**
      * 删除模板消息
      * @param $id
-     * @return \think\facade\Response\Json
+     * @return \think\response\Json
      */
     public function delete($id)
     {

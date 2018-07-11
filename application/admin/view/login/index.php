@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
     <title>登录 - CRMEB管理系统</title>
-    <link href="__ADMIN_FRAME__/css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
-    <link href="__ADMIN_FRAME__/css/font-awesome.min.css?v=4.3.0" rel="stylesheet">
-    <link href="__ADMIN_FRAME__/css/animate.min.css" rel="stylesheet">
-    <link href="__ADMIN_FRAME__/css/style.min.css?v=3.0.0" rel="stylesheet">
+    <link href="{__FRAME_PATH}css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="{__FRAME_PATH}css/font-awesome.min.css?v=4.3.0" rel="stylesheet">
+    <link href="{__FRAME_PATH}css/animate.min.css" rel="stylesheet">
+    <link href="{__FRAME_PATH}css/style.min.css?v=3.0.0" rel="stylesheet">
     <script>
         top != window && (top.location.href = location.href);
     </script>
@@ -17,7 +17,7 @@
 <div class="middle-box text-center loginscreen  animated fadeInDown">
     <div class="login-group">
         <h3 class="login-logo">
-            <img src="__ADMIN__/system/images/logo.png">
+            <img src="{__ADMIN_PATH}images/logo.png">
             <p>CRMEB管理系统</p>
         </h3>
         <form class="m-t" role="form" action="{:url('verify')}" method="post">
@@ -56,9 +56,9 @@
     </div>
 </div>
 <!-- 全局js -->
-<script src="__ADMIN_PLUG__/jquery-1.10.2.min.js"></script>
-<script src="__ADMIN_FRAME__/js/bootstrap.min.js?v=3.4.0"></script>
-<script src="__ADMIN_MODOULE__/login/index.js"></script>
+<script src="{__PLUG_PATH}jquery-1.10.2.min.js"></script>
+<script src="{__FRAME_PATH}js/bootstrap.min.js?v=3.4.0"></script>
+<script src="{__MODULE_PATH}login/index.js"></script>
 <!--统计代码，可删除-->
 <!--点击刷新验证码-->
 <script>

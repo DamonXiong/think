@@ -1,6 +1,6 @@
 {extend name="public/container"}
 {block name="head_top"}
-<script src="__ADMIN_PLUG__/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="{__PLUG_PATH}sweetalert2/sweetalert2.all.min.js"></script>
 {/block}
 {block name="content"}
 <div class="row">
@@ -48,7 +48,7 @@
                                     <a href="#">
                                         {$vo.nickname}
                                     </a>
-                                    <small class="text-muted">{$vo.add_time|date='Y-m-d H:i:s'} 来自产品: {$vo.store_name}</small>
+                                    <small class="text-muted">{$vo.add_time|date='Y-m-d H:i:s',###} 来自产品: {$vo.store_name}</small>
                                 </div>
                             </div>
                             <div class="social-body">
@@ -66,7 +66,7 @@
                             {if condition="$vo['merchant_reply_content']"}
                             <div class="social-footer">
                                 <div class="social-comment">
-                                    <div class="media-body">回复时间：<small class="text-muted">{$vo.merchant_reply_time|date='Y-m-d H:i:s'}</small></div>
+                                    <div class="media-body">回复时间：<small class="text-muted">{$vo.merchant_reply_time|date='Y-m-d H:i:s',###}</small></div>
                                     <div class="media-body">
                                         <p>{$vo['merchant_reply_content']}</p>
                                     </div>
@@ -117,13 +117,13 @@
                                 {/if}
                             </td>
                             <td class="text-center">
-                                {$vo.add_time|date='Y-m-d H:i:s'}
+                                {$vo.add_time|date='Y-m-d H:i:s',###}
                             </td>
                             <td class="text-center">
                                 {if condition="$vo['merchant_reply_content']"}
                                 {$vo['merchant_reply_content']}
                                 <br/>
-                                {$vo.merchant_reply_time|date='Y-m-d H:i:s'}
+                                {$vo.merchant_reply_time|date='Y-m-d H:i:s',###}
                                 {elseif condition="$vo['comment']"/}
                                 <button class="reply btn btn-primary btn-xs" data-url="{:Url('set_reply')}" data-id="{$vo['id']}" type="button"><i class="fa fa-eyedropper"></i> 回复
                                 </button>

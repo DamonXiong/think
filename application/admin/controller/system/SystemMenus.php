@@ -8,7 +8,7 @@ use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
 use think\Request;
-use think\facade\Url;
+use think\Url;
 use app\admin\model\system\SystemMenus as MenusModel;
 use app\admin\controller\AuthController;
 
@@ -46,7 +46,7 @@ class SystemMenus extends AuthController
 
     public function upload()
     {
-        $res = Upload::Image('file','admin/config');
+        $res = Upload::Image('file','config');
         if(!$res->status) return Json::fail($res->error);
         $thumbPath = Upload::thumb($res->dir);
         return Json::successful('图片上传成功!',['name'=>$res->fileInfo->getSaveName(),'url'=>Upload::pathToUrl($thumbPath)]);
@@ -72,7 +72,7 @@ class SystemMenus extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function index()
     {
@@ -91,7 +91,7 @@ class SystemMenus extends AuthController
     /**
      * 显示创建资源表单页.
      *
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function create($cid)
     {
@@ -105,7 +105,7 @@ class SystemMenus extends AuthController
      * 保存新建的资源
      *
      * @param  \think\Request  $request
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function save(Request $request)
     {
@@ -129,7 +129,7 @@ class SystemMenus extends AuthController
      * 显示指定的资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function read($id)
     {
@@ -158,7 +158,7 @@ class SystemMenus extends AuthController
      * 显示编辑资源表单页.
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function edit($id)
     {
@@ -172,7 +172,7 @@ class SystemMenus extends AuthController
      *
      * @param  \think\Request  $request
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function update(Request $request, $id)
     {
@@ -197,7 +197,7 @@ class SystemMenus extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function delete($id)
     {

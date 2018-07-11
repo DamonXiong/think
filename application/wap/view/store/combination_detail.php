@@ -38,7 +38,7 @@
                 <div class="swiper-pagination"></div>
                 <div class="pro-coundown">
                     <span class="txt"><i class="icon-sd"></i>限时秒杀</span>
-                    <div class="countdown" data-time="{$storeInfo.stop_time|date='Y/m/d H:i:s'}">
+                    <div class="countdown" data-time="{$storeInfo.stop_time|date='Y/m/d H:i:s',###}">
                         <span class="days" style="color: #fff !important;">0</span>
                         <i>天</i>
                         <span class="hours" style="color: #fff !important;">00</span>
@@ -71,7 +71,7 @@
                                     <div class="user-info">
                                         <p class="name">{$vo.nickname}<span>还差{$vo.count}人</span></p>
                                         <div class="count-down">剩余
-                                            <div class="count-time-{$vo.id}" data-time="{$vo.stop_time|date='Y/m/d H:i:s'}">
+                                            <div class="count-time-{$vo.id}" data-time="{$vo.stop_time|date='Y/m/d H:i:s',###}">
                                                 <span class="hours">00</span>
                                                 :
                                                 <span class="minutes">00</span>
@@ -99,7 +99,7 @@
                                 <div class="count-time">
                                     <p>还差<span class="num">{$vo.count}人</span>拼成</p>
                                     <div class="timer-wrapper">
-                                        <div class="count-time-{$vo.id}" data-time="{$vo.stop_time|date='Y/m/d H:i:s'}">
+                                        <div class="count-time-{$vo.id}" data-time="{$vo.stop_time|date='Y/m/d H:i:s',###}">
                                             <span class="hours">00</span>
                                             :
                                             <span class="minutes">00</span>

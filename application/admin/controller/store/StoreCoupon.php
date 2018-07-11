@@ -12,7 +12,7 @@ use service\JsonService as Json;
 use service\UtilService;
 use think\Request;
 use app\admin\model\store\StoreCoupon as CouponModel;
-use think\facade\Url;
+use think\Url;
 
 /**
  * 优惠券控制器

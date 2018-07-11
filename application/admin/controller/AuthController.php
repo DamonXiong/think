@@ -8,7 +8,7 @@ use app\admin\model\system\SystemRole;
 use basic\SystemBasic;
 use behavior\system\SystemBehavior;
 use service\HookService;
-use think\facade\Url;
+use think\Url;
 
 /**
  * 基类 所有控制器继承的类
@@ -37,9 +37,9 @@ class AuthController extends SystemBasic
 
     protected $skipLogController = ['index','common'];
 
-    protected function initialize()
+    protected function _initialize()
     {
-        parent::initialize();
+        parent::_initialize();
         if(!SystemAdmin::hasActiveAdmin()) return $this->redirect('Login/index');
         try{
             $adminInfo = SystemAdmin::activeAdminInfoOrFail();

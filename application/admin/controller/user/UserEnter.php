@@ -13,7 +13,7 @@ use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
 use think\Request;
-use think\facade\Url;
+use think\Url;
 use app\admin\model\user\UserEnter as UserEnterModel;
 
 /**
@@ -29,7 +29,7 @@ class UserEnter extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function index()
     {
@@ -86,7 +86,7 @@ class UserEnter extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function delete($id)
     {

@@ -9,7 +9,7 @@
 namespace app\admin\model\user;
 use app\wap\model\user\UserBill;
 use app\wap\model\user;
-use think\facade\Url;
+use think\Url;
 use traits\ModelTrait;
 use basic\ModelBasic;
 use service\WechatTemplateService;
@@ -39,7 +39,7 @@ class UserExtract extends ModelBasic
         }
         $model = $model->alias('a');
         $model = $model->field('a.*,b.nickname');
-        $model = $model->join('wechat_user b','b.uid=a.uid','LEFT');
+        $model = $model->join('__USER__ b','b.uid=a.uid','LEFT');
         $model = $model->order('a.id desc');
         return self::page($model);
     }

@@ -1,9 +1,9 @@
 {include file="public/frame_head"}
-<link href="__ADMIN_FRAME__/css/plugins/iCheck/custom.css" rel="stylesheet">
-<script src="__ADMIN_PLUG__/moment.js"></script>
-<link rel="stylesheet" href="__ADMIN_PLUG__/daterangepicker/daterangepicker.css">
-<script src="__ADMIN_PLUG__/daterangepicker/daterangepicker.js"></script>
-<script src="__ADMIN_SYSTEM__/frame/js/plugins/iCheck/icheck.min.js"></script>
+<link href="{__FRAME_PATH}css/plugins/iCheck/custom.css" rel="stylesheet">
+<script src="{__PLUG_PATH}moment.js"></script>
+<link rel="stylesheet" href="{__PLUG_PATH}daterangepicker/daterangepicker.css">
+<script src="{__PLUG_PATH}daterangepicker/daterangepicker.js"></script>
+<script src="{__ADMIN_PATH}frame/js/plugins/iCheck/icheck.min.js"></script>
 <style type="text/css">
     .form-inline .input-group{display: inline-table;vertical-align: middle;}
     .form-inline .input-group .input-group-btn{width: auto;}
@@ -79,7 +79,7 @@
                                         {/if}
                                     </td>
                                     <td class="text-center">
-                                        {$vo.add_time|date="Y-m-d H:i:s"}
+                                        {$vo.add_time|date="Y-m-d H:i:s",###}
                                     </td>
                                 </tr>
                                 {/volist}

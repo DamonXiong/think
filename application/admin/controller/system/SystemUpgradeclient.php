@@ -62,11 +62,11 @@ class SystemUpgradeclient extends AuthController
         $fileservice=new uService;
         if(is_array($post['ids'])){
             foreach ($post['ids'] as $file){
-                $fileservice->del_dir(ROOT_PATH.'public'.DIRECTORY_SEPARATOR.'copyfile'.$file);
+                $fileservice->del_dir(ROOT_PATH.'public'.DS.'copyfile'.$file);
             }
         }
         if($post['id']){
-            $copyFile=ROOT_PATH.'public'.DIRECTORY_SEPARATOR.'copyfile'.$post['id'];
+            $copyFile=ROOT_PATH.'public'.DS.'copyfile'.$post['id'];
             $fileservice->del_dir($copyFile);
         }
         Json::successful('删除成功');
@@ -94,17 +94,17 @@ class SystemUpgradeclient extends AuthController
             $list=$versionInfo['data'];
             $id=[];
             foreach ($list as $key=>$val){
-                $savefile=ROOT_PATH . 'public' . DIRECTORY_SEPARATOR.'upgrade_lv';
+                $savefile=ROOT_PATH . 'public' . DS.'upgrade_lv';
                 //1，检查远程下载文件，并下载
                 if(($save_path=$fileservice->check_remote_file_exists($val['zip_name'],$savefile))===false) Json::fail('远程升级包不存在');
                 //2，首先解压文件
-                $savename=ROOT_PATH.'public'.DIRECTORY_SEPARATOR.'upgrade_lv'.DIRECTORY_SEPARATOR.time();
+                $savename=ROOT_PATH.'public'.DS.'upgrade_lv'.DS.time();
                 $fileservice->zipopen($save_path,$savename);
                 //3，执行SQL文件
                 Db::startTrans();
                 try{
                     //参数3不介意大小写的
-                    $sqlfile=$fileservice->list_dir_info($savename.DIRECTORY_SEPARATOR,true,'sql');
+                    $sqlfile=$fileservice->list_dir_info($savename.DS,true,'sql');
                     if(is_array($sqlfile) && !empty($sqlfile)){
                         foreach($sqlfile as $file){
                             if(file_exists($file)){
@@ -126,7 +126,7 @@ class SystemUpgradeclient extends AuthController
                 }catch(\Exception $e){
                     Db::rollback();
                     //删除解压下的文件
-                    $fileservice->del_dir(ROOT_PATH.'public'.DIRECTORY_SEPARATOR.'upgrade_lv');
+                    $fileservice->del_dir(ROOT_PATH.'public'.DS.'upgrade_lv');
                     //删除压缩包
                     $fileservice->unlink_file($save_path);
                     //升级失败发送错误信息
@@ -141,23 +141,23 @@ class SystemUpgradeclient extends AuthController
                     return Json::fail('升级失败SQL文件执行有误');
                 }
                 //4,备份文件
-                $copyFile=ROOT_PATH.'public'.DIRECTORY_SEPARATOR.'copyfile'.$val['id'];
-                $copyList=$fileservice->get_dirs($savename.DIRECTORY_SEPARATOR);
+                $copyFile=ROOT_PATH.'public'.DS.'copyfile'.$val['id'];
+                $copyList=$fileservice->get_dirs($savename.DS);
                 if(isset($copyList['dir'])){
                     if($copyList['dir'][0]=='.' && $copyList['dir'][1]=='..'){
                         array_shift($copyList['dir']);
                         array_shift($copyList['dir']);
                     }
                     foreach($copyList['dir'] as $dir){
-                        if(file_exists(ROOT_PATH.$dir,$copyFile.DIRECTORY_SEPARATOR.$dir)){
-                            $fileservice->copy_dir(ROOT_PATH.$dir,$copyFile.DIRECTORY_SEPARATOR.$dir);
+                        if(file_exists(ROOT_PATH.$dir,$copyFile.DS.$dir)){
+                            $fileservice->copy_dir(ROOT_PATH.$dir,$copyFile.DS.$dir);
                         }
                     }
                 }
                 //5，覆盖文件
                 $fileservice->handle_dir($savename,ROOT_PATH);
                 //6,删除升级生成的目录
-                $fileservice->del_dir(ROOT_PATH.'public'.DIRECTORY_SEPARATOR.'upgrade_lv');
+                $fileservice->del_dir(ROOT_PATH.'public'.DS.'upgrade_lv');
                 //7,删除压缩包
                 $fileservice->unlink_file($save_path);
                 //8,改写本地升级文件

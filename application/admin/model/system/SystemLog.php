@@ -10,7 +10,7 @@ namespace app\admin\model\system;
 
 use traits\ModelTrait;
 use basic\ModelBasic;
-use think\facade\Request;
+use think\Request;
 
 /**
  * 管理员操作记录
@@ -35,17 +35,18 @@ class SystemLog extends ModelBasic
      */
     public static function adminVisit($adminId,$adminName,$type)
     {
-        $module = Request::module();
-        $controller = Request::controller();
-        $action = Request::action();
-        $route = Request::route();
+        $request = Request::instance();
+        $module = $request->module();
+        $controller = $request->controller();
+        $action = $request->action();
+        $route = $request->route();
         $data = [
-            'method'=>Request::method(),
+            'method'=>$request->method(),
             'admin_id'=>$adminId,
             'admin_name'=>$adminName,
             'path'=>SystemMenus::getAuthName($action,$controller,$module,$route),
             'page'=>SystemMenus::getVisitName($action,$controller,$module,$route)?:'未知',
-            'ip'=>Request::ip(),
+            'ip'=>$request->ip(),
             'type'=>$type
         ];
         return self::set($data);
@@ -59,16 +60,17 @@ class SystemLog extends ModelBasic
      */
     public static function setCurrentVisit($adminInfo, $page)
     {
-        $module = Request::module();
-        $controller = Request::controller();
-        $action = Request::action();
-        $route = Request::route();
+        $request = Request::instance();
+        $module = $request->module();
+        $controller = $request->controller();
+        $action = $request->action();
+        $route = $request->route();
         $data = [
-            'method'=>Request::method(),
+            'method'=>$request->method(),
             'admin_id'=>$adminInfo['id'],
             'path'=>SystemMenus::getAuthName($action,$controller,$module,$route),
             'page'=>$page,
-            'ip'=>Request::ip()
+            'ip'=>$request->ip()
         ];
         return self::set($data);
     }

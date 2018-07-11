@@ -29,13 +29,13 @@
                                 {$vo.cthash}
                             </td>
                             <td class="text-center">
-                                {$vo.atime|date='Y-m-d H:i:s'}
+                                {$vo.atime|date='Y-m-d H:i:s',###}
                             </td>
                             <td class="text-center">
-                                {$vo.mtime|date='Y-m-d H:i:s'}
+                                {$vo.mtime|date='Y-m-d H:i:s',###}
                             </td>
                             <td class="text-center">
-                                {$vo.ctime|date='Y-m-d H:i:s'}
+                                {$vo.ctime|date='Y-m-d H:i:s',###}
                             </td>
                         </tr>
                         {/volist}

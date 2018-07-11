@@ -12,7 +12,7 @@ use traits\ModelTrait;
 use basic\ModelBasic;
 use behavior\system\SystemBehavior;
 use service\HookService;
-use think\facade\Session;
+use think\Session;
 
 /**
  * Class SystemAdmin

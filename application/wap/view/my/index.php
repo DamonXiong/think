@@ -9,7 +9,7 @@
                     <div class="avatar"><img src="{$userInfo.avatar}" /></div>
                     <div class="user-info">
                         <p class="name">{$userInfo.nickname}</p>
-                        <p class="time">注册时间：{$userInfo.add_time|date="Y-m-d"}</p>
+                        <p class="time">注册时间：{$userInfo.add_time|date="Y-m-d",###}</p>
                     </div>
                 </div>
                 <div class="user-btn flex">

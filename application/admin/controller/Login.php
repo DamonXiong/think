@@ -8,9 +8,9 @@ use basic\SystemBasic;
 use service\CacheService;
 use service\UtilService;
 use think\Request;
-use think\facade\Response;
-use think\facade\Session;
-use think\facade\Url;
+use think\Response;
+use think\Session;
+use think\Url;
 
 /**
  * 登录验证控制器

@@ -12,9 +12,9 @@
         <meta name="screen-orientation" content="portrait">
         <!-- QQ强制竖屏 -->
         <meta name="x5-orientation" content="portrait">
-        <link rel="stylesheet" type="text/css" href="__ADMIN_MODOULE__/error/css/reset-2.0.css" />
-        <link rel="stylesheet" type="text/css" href="__ADMIN_MODOULE__/error/css/style.css" />
-        <script src="__ADMIN_FRAME__/js/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{__MODULE_PATH}error/css/reset-2.0.css" />
+        <link rel="stylesheet" type="text/css" href="{__MODULE_PATH}error/css/style.css" />
+        <script src="{__FRAME_PATH}js/jquery.min.js"></script>
     </head>
     <style type="text/css">
 
@@ -22,7 +22,7 @@
     <body>
         <div class="link-wrapper">
              <div class="success">
-                <img src="__ADMIN_MODOULE__/success/images/success-icon.png" />
+                <img src="{__MODULE_PATH}success/images/success-icon.png" />
                 <div class="text">
                     <p class="status">{$msg}！</p>
                     <p class="countdown"><span class="nmb">3</span>秒钟后自动跳转，<a class="back" href="javascript:void(0);">点此手动跳转</a></p>

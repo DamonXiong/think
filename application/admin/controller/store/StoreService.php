@@ -6,7 +6,7 @@ use service\UtilService as Util;
 use service\JsonService as Json;
 use service\UploadService as Upload;
 use think\Request;
-use think\facade\Url;
+use think\Url;
 use app\admin\model\store\StoreService as ServiceModel;
 use app\admin\model\store\StoreServiceLog as StoreServiceLog;
 use app\admin\model\wechat\WechatUser as UserModel;
@@ -21,7 +21,7 @@ class StoreService extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function index()
     {
@@ -31,7 +31,7 @@ class StoreService extends AuthController
     /**
      * 显示创建资源表单页.
      *
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function create(){
         $where = Util::getMore([
@@ -49,7 +49,7 @@ class StoreService extends AuthController
      * 保存新建的资源
      *
      * @param  \think\Request  $request
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function save(Request $request){
         $params = $request->post();
@@ -71,7 +71,7 @@ class StoreService extends AuthController
      * 显示编辑资源表单页.
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function edit($id)
     {
@@ -87,7 +87,7 @@ class StoreService extends AuthController
      * 保存新建的资源
      *
      * @param  \think\Request  $request
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function update(Request $request,$id)
     {
@@ -102,7 +102,7 @@ class StoreService extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function delete($id)
     {
@@ -114,11 +114,11 @@ class StoreService extends AuthController
 
     /**
      * 上传图片
-     * @return \think\facade\Response\Json
+     * @return \think\response\Json
      */
     public function upload()
     {
-        $res = Upload::image('file','admin/store/service');
+        $res = Upload::image('file','store/service');
         $thumbPath = Upload::thumb($res->dir);
         if($res->status == 200)
             return Json::successful('图片上传成功!',['name'=>$res->fileInfo->getSaveName(),'url'=>Upload::pathToUrl($thumbPath)]);
@@ -129,7 +129,7 @@ class StoreService extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function chat_user($id)
     {
@@ -143,7 +143,7 @@ class StoreService extends AuthController
      /**
      * 显示资源列表
      *
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function chat_list($uid,$to_uid)
     {

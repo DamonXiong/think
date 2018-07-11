@@ -53,7 +53,7 @@ class StoreProductReply extends ModelBasic
     {
         $model = self::productValidWhere('A')->where('A.product_id',$productId)
             ->field('A.product_score,A.service_score,A.comment,A.pics,A.add_time,B.nickname,B.avatar,C.cart_info,A.merchant_reply_content')
-            ->join('wechat_user B','A.uid = B.uid')
+            ->join('__USER__ B','A.uid = B.uid')
             ->join('__STORE_ORDER_CART_INFO__ C','A.unique = C.unique');
         $baseOrder = 'A.add_time DESC,A.product_score DESC, A.service_score DESC';
         if($order == 'new') $model->order($baseOrder);
@@ -87,7 +87,7 @@ class StoreProductReply extends ModelBasic
     {
         $res = self::productValidWhere('A')->where('A.product_id',$productId)
             ->field('A.product_score,A.service_score,A.comment,A.pics,A.add_time,B.nickname,B.avatar,C.cart_info')
-            ->join('wechat_user B','A.uid = B.uid')
+            ->join('__USER__ B','A.uid = B.uid')
             ->join('__STORE_ORDER_CART_INFO__ C','A.unique = C.unique')
             ->order('LENGTH(A.comment) DESC,A.product_score DESC, A.service_score DESC, A.add_time DESC')->find();
         if(!$res) return null;

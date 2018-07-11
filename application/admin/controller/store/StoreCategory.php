@@ -9,7 +9,7 @@ use service\JsonService as Json;
 use service\UploadService as Upload;
 use think\Request;
 use app\admin\model\store\StoreCategory as CategoryModel;
-use think\facade\Url;
+use think\Url;
 
 /**
  * 产品分类控制器
@@ -22,7 +22,7 @@ class StoreCategory extends AuthController
     /**
      * 显示资源列表
      *
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function index()
     {
@@ -40,7 +40,7 @@ class StoreCategory extends AuthController
     /**
      * 显示创建资源表单页.
      *
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function create()
     {
@@ -49,7 +49,7 @@ class StoreCategory extends AuthController
     }
 
     /**
-     * @return \think\facade\Response\Json
+     * @return \think\response\Json
      */
     public function rules()
     {
@@ -70,11 +70,11 @@ class StoreCategory extends AuthController
 
     /**
      * 上传图片
-     * @return \think\facade\Response\Json
+     * @return \think\response\Json
      */
     public function upload()
     {
-        $res = Upload::image('file','store/category', true, true, 'public' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'uploads');
+        $res = Upload::image('file','store/category');
         $thumbPath = Upload::thumb($res->dir);
         if($res->status == 200)
             return Json::successful('图片上传成功!',['name'=>$res->fileInfo->getSaveName(),'url'=>Upload::pathToUrl($thumbPath)]);
@@ -86,7 +86,7 @@ class StoreCategory extends AuthController
      * 保存新建的资源
      *
      * @param  \think\Request  $request
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function save(Request $request)
     {
@@ -111,7 +111,7 @@ class StoreCategory extends AuthController
      * 显示编辑资源表单页.
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function edit($id)
     {
@@ -124,7 +124,7 @@ class StoreCategory extends AuthController
      * 显示指定的资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function read($id)
     {
@@ -150,7 +150,7 @@ class StoreCategory extends AuthController
      *
      * @param  \think\Request  $request
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function update(Request $request, $id)
     {
@@ -174,7 +174,7 @@ class StoreCategory extends AuthController
      * 删除指定资源
      *
      * @param  int  $id
-     * @return \think\facade\Response
+     * @return \think\Response
      */
     public function delete($id)
     {

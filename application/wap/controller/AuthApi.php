@@ -190,7 +190,7 @@ class AuthApi extends AuthController
 
     public function edit_user_address()
     {
-        $request = new Request();
+        $request = Request::instance();
         if(!$request->isPost()) return JsonService::fail('参数错误!');
         $addressInfo = UtilService::postMore([
             ['address',[]],
@@ -261,7 +261,7 @@ class AuthApi extends AuthController
             return JsonService::status('extend_order','订单已生成',['orderId'=>$key,'key'=>$key]);
         list($addressId,$couponId,$payType,$useIntegral,$mark,$combinationId,$pinkId,$seckill_id) = UtilService::postMore([
             'addressId','couponId','payType','useIntegral','mark',['combinationId',0],['pinkId',0],['seckill_id',0]
-        ],new Request(),true);
+        ],Request::instance(),true);
         $payType = strtolower($payType);
         if($pinkId) if(StorePink::getIsPinkUid($pinkId)) return JsonService::status('ORDER_EXIST','订单生成失败，你已经在该团内不能再参加了',['orderId'=>StoreOrder::getStoreIdPink($pinkId)]);
         if($pinkId) if(StoreOrder::getIsOrderPink($pinkId)) return JsonService::status('ORDER_EXIST','订单生成失败，你已经参加该团了，请先支付订单',['orderId'=>StoreOrder::getStoreIdPink($pinkId)]);
@@ -430,7 +430,7 @@ class AuthApi extends AuthController
             return JsonService::fail('该产品已评价!');
         $group = UtilService::postMore([
             ['comment',''],['pics',[]],['product_score',5],['service_score',5]
-        ],new Request());
+        ],Request::instance());
         $group['comment'] = htmlspecialchars(trim($group['comment']));
         if(sensitive_words_filter($group['comment'])) return JsonService::fail('请注意您的用词，谢谢！！');
         if($group['product_score'] < 1) return JsonService::fail('请为产品评分');

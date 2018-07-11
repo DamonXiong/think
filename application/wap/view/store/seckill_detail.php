@@ -51,7 +51,7 @@
             </ul>
             <div class="pro-coundown">
                 <span class="txt"><i class="icon-sd"></i>限时秒杀</span>
-                <div class="countdown" data-time="{$storeInfo.stop_time|date='Y/m/d H:i:s'}">
+                <div class="countdown" data-time="{$storeInfo.stop_time|date='Y/m/d H:i:s',###}">
                     <span class="hours" style="width:.42rem;">00</span>
                     <i>时</i>
                     <span class="minutes" style="width:.42rem;">00</span>

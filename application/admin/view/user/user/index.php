@@ -65,7 +65,7 @@
                                 其他类型
                                 {/if}
                             </td>
-                            <td class="text-center">{$vo.add_time|date='Y-m-d H:i:s'}</td>
+                            <td class="text-center">{$vo.add_time|date='Y-m-d H:i:s',###}</td>
                             <td class="text-center">
                                 <button class="btn btn-info btn-xs" type="button"  onclick="$eb.createModalFrame('编辑','{:Url('edit',array('uid'=>$vo['uid']))}')"><i class="fa fa-paste"></i> 编辑</button>
                             </td>

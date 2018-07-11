@@ -40,7 +40,7 @@
                                 {/if}
                             </td>
                             <td class="text-center">微信支付</td>
-                            <td class="text-center">{$vo.pay_time|date='Y-m-d H:i:s'}</td>
+                            <td class="text-center">{$vo.pay_time|date='Y-m-d H:i:s',###}</td>
                             <td class="text-center">
                                 <button class="btn btn-info btn-xs" type="button"  onclick="$eb.createModalFrame('退款','{:Url('edit',array('id'=>$vo['id']))}')"><i class="fa fa-paste"></i> 退款</button>
                             </td>
