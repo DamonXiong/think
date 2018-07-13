@@ -2,12 +2,12 @@
 
 /**
  * ============================================================================
- * °æÈ¨ËùÓÐ 2013-2018 ÓàÒ¦ÊÐÒ»ÑóÍøÂç¿Æ¼¼ÓÐÏÞ¹«Ë¾£¬²¢±£ÁôËùÓÐÈ¨Àû¡£
- * ÍøÕ¾µØÖ·: http://www.163.com;
+ * ç‰ˆæƒæ‰€æœ‰ 2013-2018 ä½™å§šå¸‚ä¸€æ´‹ç½‘ç»œç§‘æŠ€æœ‰é™å…¬å¸ï¼Œå¹¶ä¿ç•™æ‰€æœ‰æƒåˆ©ã€‚
+ * ç½‘ç«™åœ°å€: http://www.163.com;
  * QQ: 57790081
  * ----------------------------------------------------------------------------
- * Õâ²»ÊÇÒ»¸ö×ÔÓÉÈí¼þ£¡ÄúÖ»ÄÜÔÚ²»ÓÃÓÚÉÌÒµÄ¿µÄµÄÇ°ÌáÏÂ¶Ô³ÌÐò´úÂë½øÐÐÐÞ¸ÄºÍ
- * Ê¹ÓÃ£»²»ÔÊÐí¶Ô³ÌÐò´úÂëÒÔÈÎºÎÐÎÊ½ÈÎºÎÄ¿µÄµÄÔÙ·¢²¼¡£
+ * è¿™ä¸æ˜¯ä¸€ä¸ªè‡ªç”±è½¯ä»¶ï¼æ‚¨åªèƒ½åœ¨ä¸ç”¨äºŽå•†ä¸šç›®çš„çš„å‰æä¸‹å¯¹ç¨‹åºä»£ç è¿›è¡Œä¿®æ”¹å’Œ
+ * ä½¿ç”¨ï¼›ä¸å…è®¸å¯¹ç¨‹åºä»£ç ä»¥ä»»ä½•å½¢å¼ä»»ä½•ç›®çš„çš„å†å‘å¸ƒã€‚
  * ============================================================================
 */
 
@@ -35,7 +35,7 @@ class Liveroom extends MY_Controller{
 
 		if (!$this->admin_priv('live_room'))
 		{
-			show_error("ÄúÃ»ÓÐÈ¨ÏÞ½øÐÐ´Ë²Ù×÷£¡");
+			show_error("æ‚¨æ²¡æœ‰æƒé™è¿›è¡Œæ­¤æ“ä½œï¼");
 		}
 
 		if ($cateid == '') exit($this->lang->line('access_error'));
@@ -69,8 +69,7 @@ class Liveroom extends MY_Controller{
 
 	public function add()
 	{
-
-		if ($this->form_validation->run() == false)
+		if ($this->form_validation->run('live/roomapp') == false)
 		{
 			if (validation_errors() != '')
 			{
@@ -79,12 +78,15 @@ class Liveroom extends MY_Controller{
 				exit(json_encode($retmsg));
 			}
 
-			$this->_data['row'] = $this->n->INIT();
-			$this->_data['act'] = 'add';
+			
+			$row = $this->n->INIT();
+			$row['userid'] = '63';
+			$this->_d['row'] = $row;
+			$this->_d['act'] = 'add';
 
-			$catedata =  cate2list(0, $this->cate->getCateData('news','all'));
-			$this->_data['catelist'] = array2option($catedata, '', 1);
-			$this->load->view('admin/liveroom/detail', $this->_data);
+			$catedata =  cate2list(0, $this->cate->getCateData('live','all'));		
+			$this->_d['cateid'] = array2option($catedata, $this->_d['row']['cateid'], 1);
+			$this->load->view($this->_d['cfg']['tpl_admin'] . 'liveroom/detail', $this->_d);
 		}
 		else
 		{
