@@ -63,6 +63,8 @@ class Live extends MY_Controller {
 			}
 
 			$this->_d['row'] = $this->session->userdata('userinfo');
+			$catedata =  cate2list(0, $this->c->getCateData('live','all'));		
+			$this->_d['cateid'] = array2option($catedata, $this->_d['row']['cateid'], 1);
 			$this->load->view($this->_d['cfg']['tpl'] . "live/room_app", $this->_d);
 		}
 		else
