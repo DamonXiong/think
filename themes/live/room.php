@@ -144,7 +144,7 @@ function handanlist()
 			<?php if (!empty($cfg['yy_subchannel'])) { ?>
 				videoId = videoId + "/" + "<?php echo $cfg['yy_subchannel'] ?>";
 			<?php }?>
-			var videoHtml = "<embed id='yyEmbed' src='http://yy.com/s/"+videoId+"/mini.swf' quality='high' width='390'";
+			var videoHtml = "<embed id='yyEmbed' src='http://weblbs.yystatic.com/s/"+videoId+"/finscene.swf' quality='high' width='390'";
 				videoHtml += " height='400' align='middle' allowscriptaccess='always' allowfullscreen='true'";
 				videoHtml += " mode='transparent' wmode='transparent' type='application/x-shockwave-flash'></embed>";
 			$("#video_player").html(videoHtml);

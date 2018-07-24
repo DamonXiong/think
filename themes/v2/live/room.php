@@ -4,10 +4,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-<title><?php echo $cfg['site_title'];?></title>
+<title><?php echo $cfg['site_title']; ?></title>
 <meta name="renderer" content="webkit">
 <meta name="description" content="" />
-<meta name="keywords" content="<?php echo $cfg['site_title'];?>" />
+<meta name="keywords" content="<?php echo $cfg['site_title']; ?>" />
 
 <link href="/themes/v2/static/css/global.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="/themes/v2/static/css/jquery.mCustomScrollbar.css"/>
@@ -77,30 +77,36 @@ left: 50%;
 width:800px;
 margin: -150px 0 0 -400px;
 }
-<?php if($userinfo['ismaster'] != 26){
-echo '#chataudit{display:none;}';
+<?php if ($userinfo['ismaster'] != 26) {
+	echo '#chataudit{display:none;}';
 }
 ?>
 </style>
 
 <div class="tipForm22" id="ttipForm22" style="display:None">
-<img src="<?php echo base_url($cfg['tpl'])?>/images/kfbgtt.jpg" />
-<img src="<?php echo base_url($cfg['tpl'])?>/images/close.gif" class="close" onClick="$('#ttipForm22').hide()"/>
+<img src="<?php echo base_url($cfg['tpl']) ?>/images/kfbgtt.jpg" />
+<img src="<?php echo base_url($cfg['tpl']) ?>/images/close.gif" class="close" onClick="$('#ttipForm22').hide()"/>
 <span id="nen" style="position: absolute;margin-top: -209px;width: 100%;text-align: center;color: yellow;font-size: 20px;"></span>
 <span id="topqq" class="top11" style="width: 794px;margin-left:-45px;"><span id="topqq1">
-			<?php if (!empty($adlist[130])) { foreach ($adlist[130] as $k => $v) {?>
-			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=<?php echo $v['link']?>&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['link']?>:41" alt="<?php echo $v['title']?>" title="请加QQ：<?php echo $v['link']?>"></a>
-			<?php } }?>				
+			<?php if (!empty($adlist[130])) {
+			foreach ($adlist[130] as $k => $v) { ?>
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=<?php echo $v['link'] ?>&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['link'] ?>:41" alt="<?php echo $v['title'] ?>" title="请加QQ：<?php echo $v['link'] ?>"></a>
+			<?php 
+	}
+} ?>				
 			</span>
 </div>
 <div class="tipForm23" id="ttipForm23" style="display:None">
-<img src="<?php echo base_url($cfg['tpl'])?>/images/kfbgtt1.jpg" />
-<img src="<?php echo base_url($cfg['tpl'])?>/images/close.gif" class="close" onClick="$('#ttipForm23').hide()"/>
+<img src="<?php echo base_url($cfg['tpl']) ?>/images/kfbgtt1.jpg" />
+<img src="<?php echo base_url($cfg['tpl']) ?>/images/close.gif" class="close" onClick="$('#ttipForm23').hide()"/>
 <span id="nen" style="position: absolute;margin-top: -209px;width: 100%;text-align: center;color: yellow;font-size: 20px;"></span>
 <span id="topqq" class="top11" style="width: 794px;margin-left:-45px;"><span id="topqq1">
-			<?php if (!empty($adlist[130])) { foreach ($adlist[130] as $k => $v) {?>
-			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=<?php echo $v['link']?>&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['link']?>:41" alt="<?php echo $v['title']?>" title="请加QQ：<?php echo $v['link']?>"></a>
-			<?php } }?>				
+			<?php if (!empty($adlist[130])) {
+			foreach ($adlist[130] as $k => $v) { ?>
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=<?php echo $v['link'] ?>&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['link'] ?>:41" alt="<?php echo $v['title'] ?>" title="请加QQ：<?php echo $v['link'] ?>"></a>
+			<?php 
+	}
+} ?>				
 			</span>
 </div>
 	<div id="zoomWallpaperGrid" class="zoomWallpaperGrid">
@@ -114,19 +120,24 @@ echo '#chataudit{display:none;}';
 
 		</span>
 		<span id="topqq" style="width: 611px;"><span id="topqq1"><i>在线客服：</i>
-			<?php if (!empty($adlist[130])) { foreach ($adlist[130] as $k => $v) {?>
-			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=<?php echo $v['link']?>&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['link']?>:41" alt="<?php echo $v['title']?>" title="请加QQ：<?php echo $v['link']?>"></a>
-			<?php } }?>	
+			<?php if (!empty($adlist[130])) {
+			foreach ($adlist[130] as $k => $v) { ?>
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=<?php echo $v['link'] ?>&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $v['link'] ?>:41" alt="<?php echo $v['title'] ?>" title="请加QQ：<?php echo $v['link'] ?>"></a>
+			<?php 
+	}
+} ?>	
 			</span>
 
 		</span>
 		<span class="f_right" style="padding-top:1px;"><a href="javascript:initKefu4();" id="topqq2">联系我们</a></span>
-		<span class="f_right" id="loginstatus"><span id="ykname"><img src="/themes/v2/static/images/17yk.png" title=""><a><?php echo $userinfo['name'];?></a></span>
+		<span class="f_right" id="loginstatus"><span id="ykname"><img src="/themes/v2/static/images/17yk.png" title=""><a><?php echo $userinfo['name']; ?></a></span>
 		<?php if ((!empty($userinfo)) && ($userinfo['level'] != '-1')) { ?>
 			<a id="btlogout" href="/index.php/user/logout">退出</a> 
-		<?php }else{ ?>
+		<?php 
+} else { ?>
 			<a id="btreg" href="#" onClick="showRegForm()" >注册会员</a><a id="btlogin" onClick="showLoginForm();">登录</a> 
-		<?php } ?>
+		<?php 
+} ?>
 		</span>
 
 
@@ -147,19 +158,19 @@ echo '#chataudit{display:none;}';
 	</div>
 	<div class="toupiao">
 		<div id="w_3" class="show">
-			<a class="t_up" href="javascript:void(0)" onClick="javascript:more_vote(2,3)">看涨<em id="kz3"><?php echo $vote_result[3][2]['v']?>%</em></a>
-			<a class="t_leve" href="javascript:void(0)" onClick="javascript:more_vote(1,3)">盘整<em id="pz3"><?php echo $vote_result[3][1]['v']?>%</em></a>
-			<a class="t_down" href="javascript:void(0)" onClick="javascript:more_vote(0,3)">看空<em id="kk3"><?php echo $vote_result[3][0]['v']?>%</em></a></div>
+			<a class="t_up" href="javascript:void(0)" onClick="javascript:more_vote(2,3)">看涨<em id="kz3"><?php echo $vote_result[3][2]['v'] ?>%</em></a>
+			<a class="t_leve" href="javascript:void(0)" onClick="javascript:more_vote(1,3)">盘整<em id="pz3"><?php echo $vote_result[3][1]['v'] ?>%</em></a>
+			<a class="t_down" href="javascript:void(0)" onClick="javascript:more_vote(0,3)">看空<em id="kk3"><?php echo $vote_result[3][0]['v'] ?>%</em></a></div>
 
 		<div id="w_4" class="hide">
-			<a class="t_up" href="javascript:void(0)" onClick="javascript:more_vote(2,4)">看涨<em id="kz4"><?php echo $vote_result[4][2]['v']?>%</em></a>
-			<a class="t_leve" href="javascript:void(0)" onClick="javascript:more_vote(1,4)">盘整<em id="pz4"><?php echo $vote_result[4][1]['v']?>%</em></a>
-			<a class="t_down" href="javascript:void(0)" onClick="javascript:more_vote(0,4)">看空<em id="kk4"><?php echo $vote_result[4][0]['v']?>%</em></a></div>
+			<a class="t_up" href="javascript:void(0)" onClick="javascript:more_vote(2,4)">看涨<em id="kz4"><?php echo $vote_result[4][2]['v'] ?>%</em></a>
+			<a class="t_leve" href="javascript:void(0)" onClick="javascript:more_vote(1,4)">盘整<em id="pz4"><?php echo $vote_result[4][1]['v'] ?>%</em></a>
+			<a class="t_down" href="javascript:void(0)" onClick="javascript:more_vote(0,4)">看空<em id="kk4"><?php echo $vote_result[4][0]['v'] ?>%</em></a></div>
 
 		<div id="w_5" class="hide">
-			<a class="t_up" href="javascript:void(0)" onClick="javascript:more_vote(2,5)">看涨<em id="kz5"><?php echo $vote_result[5][2]['v']?>%</em></a>
-			<a class="t_leve" href="javascript:void(0)" onClick="javascript:more_vote(1,5)">盘整<em id="pz5"><?php echo $vote_result[5][1]['v']?>%</em></a>
-			<a class="t_down" href="javascript:void(0)" onClick="javascript:more_vote(0,5)">看空<em id="kk5"><?php echo $vote_result[5][0]['v']?>%</em></a></div>
+			<a class="t_up" href="javascript:void(0)" onClick="javascript:more_vote(2,5)">看涨<em id="kz5"><?php echo $vote_result[5][2]['v'] ?>%</em></a>
+			<a class="t_leve" href="javascript:void(0)" onClick="javascript:more_vote(1,5)">盘整<em id="pz5"><?php echo $vote_result[5][1]['v'] ?>%</em></a>
+			<a class="t_down" href="javascript:void(0)" onClick="javascript:more_vote(0,5)">看空<em id="kk5"><?php echo $vote_result[5][0]['v'] ?>%</em></a></div>
 	</div>	
 	<div id="hangqing" style="margin-top:5px;height:144px">
 		<iframe src="/xinxi.php" height="170px" width="190px" scrolling="no" frameborder="0"></iframe></div>
@@ -228,7 +239,7 @@ echo '#chataudit{display:none;}';
 		<!--
 		<div id="4405-1431414574" class="talk  public member">		<span><img class="roleimg" src="/Public/images/level/0/15hy.png" title="会员"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="224" uid="4405">有你很幸福</a><a class="time">[15:09]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>铜是不是要下来啊</p>		</div>		<div class="clear"></div>		</div>
 		-->
-		<?php $this->load->module('live/chat/getitem', array('masterid'=> $masterinfo['masterid']));?>
+		<?php $this->load->module('live/chat/getitem', array('masterid' => $masterinfo['masterid'])); ?>
 	</div>
 	</div><div class="mCSB_scrollTools" style="position: absolute; display: block; opacity: 0;"><a class="mCSB_buttonUp" oncontextmenu="return false;"></a><div class="mCSB_draggerContainer"><div class="mCSB_dragger" style="position: absolute; top: 268px; height: 33px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="position: relative; line-height: 33px;"></div></div><div class="mCSB_draggerRail"></div></div><a class="mCSB_buttonDown" oncontextmenu="return false;"></a></div></div></div>
 	<!-- 聊天结束 -->
@@ -241,7 +252,7 @@ echo '#chataudit{display:none;}';
 			<a href="javascript:void(0)" onClick="javascript:new_upImage()" class="bar_1 bar" id="bt_myimage">图片</a>
 			<a href="javascript:void(0)" class="bar_4 bar" id="bt_qingping">清屏</a>
 			<a href="javascript:void(0)" class="bar_5 bar" id="bt_gundong" select="true">滚动</a>	
-			<a href="javascript:void(0)" class="bar_6 " id="bt_gundong" onClick="$('#ttipForm22').show()" ><img src="<?php echo base_url($cfg['tpl'])?>/images/tubiao.png" style="height: 25px;margin-top: 5px;position: absolute;margin-left: 10px;" /></a>	
+			<a href="javascript:void(0)" class="bar_6 " id="bt_gundong" onClick="$('#ttipForm22').show()" ><img src="<?php echo base_url($cfg['tpl']) ?>/images/tubiao.png" style="height: 25px;margin-top: 5px;position: absolute;margin-left: 10px;" /></a>	
 		</span>
 		<span class="s_right"><!--input type="checkbox" id="shiliao" disabled=true/><label for="shiliao">私聊</label-->
 		 </span></div>
@@ -251,7 +262,7 @@ echo '#chataudit{display:none;}';
 	</form>
 	<iframe id="frameFile" name="frameFile" style="display: none;"></iframe>
 	<div class="input_area">
-		<?php $this->load->module('live/content/getlivedata', array(array($roominfo['cateid']), array($roominfo), array($hostinfo)));?>
+		<?php $this->load->module('live/content/getlivedata', array(array($roominfo['cateid']), array($roominfo), array($hostinfo))); ?>
 		<a href="javascript:void(0)" onClick="sendMsg()" class="sub_btn" style="background-color: rgb(244, 107, 10);">发送</a></div>
 	</div>
 	<div id="caitiao" class="hid ption_a" style="display: none;">				<dl id="c_pt" class="clearfix " isface="2" pack="3">
@@ -271,7 +282,9 @@ echo '#chataudit{display:none;}';
 	</div>
 
 	<div id="shiping">
-		<embed width="100%" height="100%" align="middle" type="application/x-shockwave-flash" wmode="transparent"   allowfullscreen="true" allowscriptaccess="never" quality="high" src="http://yy.com/s/<?php echo $cfg['yy_channel']; ?><?php if (!empty($cfg['yy_subchannel'])) { echo "/".$cfg['yy_subchannel'];}?>/yyscene.swf">
+		<embed width="100%" height="100%" align="middle" type="application/x-shockwave-flash" 
+		wmode="transparent"   allowfullscreen="true" allowscriptaccess="never" quality="high" 
+		src="http://weblbs.yystatic.com/s/<?php echo $roominfo['yy_channel']; ?><?php if (!empty($roominfo['yy_subchannel'])) {echo "/" . $roominfo['yy_subchannel'];} ?>/finscene.swf">
 	</div>
 
 	<div id="kefu" style="height: 7px;">
