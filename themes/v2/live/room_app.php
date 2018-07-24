@@ -25,16 +25,26 @@
 			<table border="0" class="box-login">
 			<tbody>
 			<tr>
-					<td width="100" style="text-align:right">直播房间名称(<span class="red">*</span>)：</td>
-					<td width="165"><input type="text" name="roomname"  class="newtitle"></td>
-				</tr>
+				<td width="100" style="text-align:right">直播房间名称(<span class="red">*</span>)：</td>
+				<td width="165"><input type="text" name="roomname"  class="newtitle"></td>
+			</tr>
 			<tr>
 				<td style="text-align:right">所属栏目(<span class="red">*</span>)：</td>
 				<td>
-				<?php foreach ($native as $k => $v) {?>
-				<label><INPUT TYPE="radio" NAME="cateid" value="<?php echo $v['cateid']?>" /><?php echo $v['catename']?></label>&nbsp;
-				<?php }?>
+				<SELECT NAME="cateid">
+					<OPTION VALUE="" SELECTED>
+					<?php echo $cateid;?>
+				</SELECT>
 				</td>
+			</tr>
+			
+			<tr>
+				<td width="100" style="text-align:right">yy频道ID(<span class="red">*</span>)：</td>
+				<td width="165"><input type="text" name="yy_channel"  class="newtitle"></td>
+			</tr>
+			<tr>
+				<td width="100" style="text-align:right">yy子频道ID(<span class="red">*</span>)：</td>
+				<td width="165"><input type="text" name="yy_subchannel"  class="newtitle"></td>
 			</tr>
 			<tr>
 				<td style="text-align:right;">直播时间段：</td>
@@ -93,7 +103,7 @@
 			<tr>
 				<td style="text-align:right">联系电话：</td>
 				<td><input type="text" class="newtitle" name="linkphone"  style="width:120px;" value="<?php echo $row['phone'];?>" >
-				QQ<input type="text" class="newtitle" style="width:120px;" name="qq" value="<?php echo $row['qq'];?>" ></td>
+				QQ<input type="text" class="newtitle" style="width:120px;" name="linkqq" value="<?php echo $row['qq'];?>" ></td>
 			</tr>
 				<tr>
 					<td>&nbsp;</td>

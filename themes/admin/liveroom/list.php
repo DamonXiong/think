@@ -35,8 +35,7 @@
 		</form>
 	</table>
   </div>
-	<td>
-			<a href="javascript:add();" class="sgbtn">添加</a></td>
+
 <td colspan="9"><div class="page">记录:<?php if(!empty($pagecount)){  echo $pagecount;} ?> 条&nbsp;&nbsp;<?php if(!empty($page)){ echo $page;}?></div></td>
 
 <script type="text/javascript">

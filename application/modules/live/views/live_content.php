@@ -100,9 +100,11 @@ $(document).ready(function (){
 })
 
 <?php 
-if (($u['role'] == '-1') && ($cfg['visitor_viewlive'] == '0')){} else { ?>
+if (($u['role'] == '-1') && ($cfg['visitor_viewlive'] == '0')) {
+} else { ?>
 	//var contenttime = setInterval(contentflash, 3000);
-<?php } ?>
+<?php 
+} ?>
 //var qatime = setInterval(qaflash, 5000);
 //var viptime = setInterval(vipflash, 5000);
 //var myqatime = setInterval(myqaflash, 5000);
@@ -191,9 +193,11 @@ function tabshow(e)
 		window.clearInterval(contenttime);
 		window.clearInterval(myqatime);
 
-		<?php if (($u['role'] == '-1') && ($cfg['visitor_viewqa'] == '0')){} else { ?>
+		<?php if (($u['role'] == '-1') && ($cfg['visitor_viewqa'] == '0')) {
+	} else { ?>
 			qatime = setInterval(qaflash, 3000);
-		<?php } ?>
+		<?php 
+} ?>
 	
 	}
 	else if($(e).attr("rel") == 'myqa')
@@ -204,9 +208,11 @@ function tabshow(e)
 		window.clearInterval(contenttime);
 		window.clearInterval(myqatime);
 	
-		<?php if (($u['role'] == '-1') && ($cfg['visitor_viewqa'] == '0')){} else { ?>
+		<?php if (($u['role'] == '-1') && ($cfg['visitor_viewqa'] == '0')) {
+	} else { ?>
 				myqatime = setInterval(myqaflash, 5000);
-		<?php } ?>
+		<?php 
+} ?>
 	}
 	
 }
@@ -245,7 +251,7 @@ function contentflash()
 			if ($.trim(d) != '')
 			{
 					 $('#notice_wav').remove(); 
-                     $('body').append('<embed id="notice_wav" src="<?php echo base_url("themes/notice.wav")?>" autostart="true" hidden="true" loop="false">');
+                     $('body').append('<embed id="notice_wav" src="<?php echo base_url("themes/notice.wav") ?>" autostart="true" hidden="true" loop="false">');
 					document.getElementById("live").scrollTop=document.getElementById("live").scrollHeight;
 					setTitleTip("新内容");
 //					$('title').text(d);
@@ -289,7 +295,7 @@ function qaflash()
 			if ($.trim(d) != '')
 			{
 				$('#qanotice_wav').remove(); 
-                $('body').append('<embed id="qanotice_wav" src="<?php echo base_url("themes/qanotice.wav")?>" autostart="true" hidden="true" loop="false">');
+                $('body').append('<embed id="qanotice_wav" src="<?php echo base_url("themes/qanotice.wav") ?>" autostart="true" hidden="true" loop="false">');
 
 				document.getElementById("qa").scrollTop=document.getElementById("qa").scrollHeight;
 				setTitleTip("新问题");
@@ -312,7 +318,7 @@ function myqaflash()
 			if ($.trim(d) != '')
 			{
 				$('#myqanotice_wav').remove(); 
-                $('body').append('<embed id="myqanotice_wav" src="<?php echo base_url("themes/qanotice.wav")?>" autostart="true" hidden="true" loop="false">');
+                $('body').append('<embed id="myqanotice_wav" src="<?php echo base_url("themes/qanotice.wav") ?>" autostart="true" hidden="true" loop="false">');
 				document.getElementById("myqa").scrollTop=document.getElementById("myqa").scrollHeight;				
 				setTitleTip("我的问题");
 			}
@@ -336,7 +342,7 @@ function sendquestion()
 		}
 	}
 
-	postdata('contentsubmit', "<?php echo site_url('live/setQuestion')?>", "retquestion");
+	postdata('contentsubmit', "<?php echo site_url('live/setQuestion') ?>", "retquestion");
 }
 
 
@@ -364,7 +370,7 @@ function retquestion(d)
 
 function appVip(roomid)
 {
-	$.jBox("iframe:<?php echo site_url('live/appVip');?>"+'/'+roomid, {title: "申请VIP",iframeScrolling: 'no',height: 500,width: 450,buttons: { '关闭': true }});
+	$.jBox("iframe:<?php echo site_url('live/appVip'); ?>"+'/'+roomid, {title: "申请VIP",iframeScrolling: 'no',height: 500,width: 450,buttons: { '关闭': true }});
 }
 
 
@@ -417,12 +423,12 @@ $('#previewimage').live('click', function() {
 
 function modic(contentid)
 {
-	$.jBox("iframe:<?php echo site_url('module/live/content/editContent')?>"+"/"+contentid+"/1/1", {title: "修改直播内容",iframeScrolling: 'no',height: 400,width: 650,buttons: { '关闭': true }});
+	$.jBox("iframe:<?php echo site_url('module/live/content/editContent') ?>"+"/"+contentid+"/1/1", {title: "修改直播内容",iframeScrolling: 'no',height: 400,width: 650,buttons: { '关闭': true }});
 }
 
 function chataudit(chatid,status)
 {
-	$.get("<?php echo site_url('module/live/chat/chataudit')?>" + "/"+chatid+"/"+status,function(data){
+	$.get("<?php echo site_url('module/live/chat/chataudit') ?>" + "/"+chatid+"/"+status,function(data){
 		var d = eval('('+data+')');
 		if (d.code == '1')
 		{
@@ -443,70 +449,64 @@ function chataudit(chatid,status)
 	<div class="grid_10 livediv contentdiv clearfix">
 		<div class="table clearfix">
 			<div class="tab">
-				<a href="###" class="cur" rel="chat" style="font-size:12px;padding:0 10px"><img src="<?php echo base_url('themes/images/icon/icon-Message.gif');?>"/>&nbsp;网友互动</a>
-				<a href="###" rel="live" style="font-size:12px;padding:0 10px"><img src="<?php echo base_url('themes/images/icon/icon-sound.gif');?>"/>&nbsp;直播室</a>
-				<a href="###" rel="qa" style="font-size:12px;padding:0 10px"><img src="<?php echo base_url('themes/images/icon/tip.png');?>" />&nbsp;播主问答</a>
-				<?php if ((!empty($u) && $u['level'] !='-1') && ($u['ismaster'] != $roominfo[0]['roomid'])) {?><a href="###" rel="myqa" style="font-size:12px;padding:0 10px">我的问答</a><?php }?>			
+				<a href="###" class="cur" rel="chat" style="font-size:12px;padding:0 10px"><img src="<?php echo base_url('themes/images/icon/icon-Message.gif'); ?>"/>&nbsp;网友互动</a>
+				<a href="###" rel="live" style="font-size:12px;padding:0 10px"><img src="<?php echo base_url('themes/images/icon/icon-sound.gif'); ?>"/>&nbsp;直播室</a>
+				<a href="###" rel="qa" style="font-size:12px;padding:0 10px"><img src="<?php echo base_url('themes/images/icon/tip.png'); ?>" />&nbsp;播主问答</a>
+				<?php if ((!empty($u) && $u['level'] != '-1') && ($u['ismaster'] != $roominfo[0]['roomid'])) { ?><a href="###" rel="myqa" style="font-size:12px;padding:0 10px">我的问答</a><?php 
+																																																																																																																																																																								} ?>			
 			</div>
 			<div class="tab-c  padd-10-0" id="livecontent">
 				<!---------------------------------- 直播消息开始---------------------------------------------->
 				<div class="messagelist" id="chat">
-					<?php $this->load->module('live/chat/getitem', array('masterid'=> $masterinfo['masterid']));?>
+					<?php $this->load->module('live/chat/getitem', array('masterid' => $masterinfo['masterid'])); ?>
 				</div>
 
 				<div class="messagelist" id="live" style="display:none;">
 					<div id="livetop">
 					</div>
 					<?php
-					if ((!empty($u) && $u['level'] != '-1') &&($u['ismaster'] == $roominfo[0]['roomid']))
-					{
-						$this->load->module('live/content/getLiveInit');
-					}
-					else if (($cfg['visitor_viewlive'] != '1') && ($u['role'] == '-1'))
-					{
-							echo "<div style='text-align:center;margin-top:20px'><h3>需要会员登录浏览。</h3></div>";						
-					}
-					else
-						$this->load->module('live/content/getLiveInit');
-					?>
+				if ((!empty($u) && $u['level'] != '-1') && ($u['ismaster'] == $roominfo[0]['roomid'])) {
+					$this->load->module('live/content/getLiveInit');
+				} else if (($cfg['visitor_viewlive'] != '1') && ($u['role'] == '-1')) {
+					echo "<div style='text-align:center;margin-top:20px'><h3>需要会员登录浏览。</h3></div>";
+				} else
+					$this->load->module('live/content/getLiveInit');
+				?>
 				</div>
 				<div class="messagelist"  id="qa" style="display:none;">
 				<?php
-				if ((!empty($u) && $u['level'] != '-1') &&($u['ismaster'] == $roominfo[0]['roomid']))
-				{
-					$this->load->module('live/content/getQuestionsAll', array('masterid'=> $masterinfo['masterid']));
-				}
-				else if (($cfg['visitor_viewqa'] != '1') && ($u['role'] == '-1'))
-				{
-					echo "<div style='text-align:center;margin-top:20px'><h3>需要会员登录浏览。</h3></div>";						
-				}
-				else
-					$this->load->module('live/content/getQuestions', array('roomid'=>$roominfo[0]['roomid'], 'masterid'=> $masterinfo['masterid']));
-				 ?>
+			if ((!empty($u) && $u['level'] != '-1') && ($u['ismaster'] == $roominfo[0]['roomid'])) {
+				$this->load->module('live/content/getQuestionsAll', array('masterid' => $masterinfo['masterid']));
+			} else if (($cfg['visitor_viewqa'] != '1') && ($u['role'] == '-1')) {
+				echo "<div style='text-align:center;margin-top:20px'><h3>需要会员登录浏览。</h3></div>";
+			} else
+				$this->load->module('live/content/getQuestions', array('roomid' => $roominfo[0]['roomid'], 'masterid' => $masterinfo['masterid']));
+			?>
 
 				</div>
 				<div class="messagelist"  id="newsdata" style="display:none;">
 <!--					<iframe id="jin10" name="jin10" src="http://www.jin10.com/jin10.com.html" scrolling="no" width="300" frameborder="0" height="350"></iframe> -->
 				</div>
 
-				<?php if ((!empty($u) && $u['level'] != '-1') && ($u['ismaster'] != $roominfo[0]['roomid'])) {?>
+				<?php if ((!empty($u) && $u['level'] != '-1') && ($u['ismaster'] != $roominfo[0]['roomid'])) { ?>
 				<div class="messagelist"  id="myqa" style="display:none;">
-				<?php $this->load->module('live/content/getMyQuestions', array('roomid'=>$roominfo[0]['roomid'], 'masterid'=> $masterinfo['masterid']));?>
+				<?php $this->load->module('live/content/getMyQuestions', array('roomid' => $roominfo[0]['roomid'], 'masterid' => $masterinfo['masterid'])); ?>
 				</div>
-				<?php }?>
+				<?php 
+		} ?>
 
 				
-				<div class="msg_title" id="live_title" style="display:none"><img src="<?php echo base_url('themes/images/icon/article-ico.gif');?>" />&nbsp;&nbsp;我有话要说
+				<div class="msg_title" id="live_title" style="display:none"><img src="<?php echo base_url('themes/images/icon/article-ico.gif'); ?>" />&nbsp;&nbsp;我有话要说
 				&nbsp;&nbsp;&nbsp;
 						<select id="category">
 						<option value="" id="first">浏览全部</option>	
-						<?php echo $livecate?>
+						<?php echo $livecate ?>
 						</select>
 						
 						<label><input type="checkbox" id="seehot" value="1" />&nbsp;精华</label>
 				</div>
 
-				<div class="msg_title" id="other_title"><img src="<?php echo base_url('themes/images/icon/article-ico.gif');?>"/>&nbsp;&nbsp;我有话要说				
+				<div class="msg_title" id="other_title"><img src="<?php echo base_url('themes/images/icon/article-ico.gif'); ?>"/>&nbsp;&nbsp;我有话要说				
 				</div>
 
 				</div>
@@ -522,45 +522,45 @@ function chataudit(chatid,status)
 				</tr>
 				<tr>
 					<td>
-					<INPUT TYPE="hidden" NAME="roomid" id="roomid" value="<?php echo $roominfo[0]['roomid'];?>">
-					<INPUT TYPE="hidden" NAME="masterid"  id="masterid" value="<?php echo $masterinfo['masterid'];?>">
+					<INPUT TYPE="hidden" NAME="roomid" id="roomid" value="<?php echo $roominfo[0]['roomid']; ?>">
+					<INPUT TYPE="hidden" NAME="masterid"  id="masterid" value="<?php echo $masterinfo['masterid']; ?>">
 					<INPUT TYPE="hidden" NAME="livestatus" id="livestatus" value="1">
-					<INPUT TYPE="hidden" id="lastcontentid" name="lastcontentid" value="<?php echo $lastcontentid?>">
-					<INPUT TYPE="hidden" NAME="lastvipid" id="lastvipid" value="<?php echo $lastvipid?>" />
-					<INPUT TYPE="hidden" NAME="lastquestionid" id="lastquestionid" value="<?php echo $lastquestionid?>" />
-					<INPUT TYPE="hidden" NAME="lastmyquestionid" id="lastmyquestionid" value="<?php echo @$lastmyquestionid?>" />
+					<INPUT TYPE="hidden" id="lastcontentid" name="lastcontentid" value="<?php echo $lastcontentid ?>">
+					<INPUT TYPE="hidden" NAME="lastvipid" id="lastvipid" value="<?php echo $lastvipid ?>" />
+					<INPUT TYPE="hidden" NAME="lastquestionid" id="lastquestionid" value="<?php echo $lastquestionid ?>" />
+					<INPUT TYPE="hidden" NAME="lastmyquestionid" id="lastmyquestionid" value="<?php echo @$lastmyquestionid ?>" />
 
 
 					<INPUT TYPE="hidden" NAME="qacate" id="qacate" value="" />
 					<INPUT TYPE="hidden" NAME="hot" id="hot" value="" />
 
 															
-					<?php if (!empty($u) && $u['level'] != '-1'){ ?>
+					<?php if (!empty($u) && $u['level'] != '-1') { ?>
 						<script type="text/javascript">
 						function sendanswer(questionid)
 						{
-							$.jBox("iframe:<?php echo site_url('live/setAnswer')?>" + '/' + questionid, {title: "解答",iframeScrolling: 'no',height: 400,width: 400,buttons: { '关闭': true }});
+							$.jBox("iframe:<?php echo site_url('live/setAnswer') ?>" + '/' + questionid, {title: "解答",iframeScrolling: 'no',height: 400,width: 400,buttons: { '关闭': true }});
 						}
 						
 
 						</script>
 
 
-						<INPUT TYPE="hidden" NAME="userid" value="<?php echo @$u['userid'];?>">
-						<INPUT TYPE="hidden" NAME="name" value="<?php echo @$u['name'];?>">
+						<INPUT TYPE="hidden" NAME="userid" value="<?php echo @$u['userid']; ?>">
+						<INPUT TYPE="hidden" NAME="name" value="<?php echo @$u['name']; ?>">
 						
 						<!-- 上次提问时间 -->
-						<INPUT TYPE="hidden" id="questionlasttime" name="quetionlasttime" value="<?php echo time()?>">
+						<INPUT TYPE="hidden" id="questionlasttime" name="quetionlasttime" value="<?php echo time() ?>">
 						<INPUT TYPE="hidden" id="nextsend" name="nextsend" value="">
 						
 						
-						<?php if ((!empty($u) && $u['level'] != '-1') &&  (!empty($u['ismaster']))) {  //主播界面?>
-							<INPUT TYPE="hidden" NAME="hostid" value="<?php echo $hostinfo[0]['userid'];?>">
-							<INPUT TYPE="hidden" NAME="author" value="<?php echo $hostinfo[0]['name'];?>">
+						<?php if ((!empty($u) && $u['level'] != '-1') && (!empty($u['ismaster']))) {  //主播界面?>
+							<INPUT TYPE="hidden" NAME="hostid" value="<?php echo $hostinfo[0]['userid']; ?>">
+							<INPUT TYPE="hidden" NAME="author" value="<?php echo $hostinfo[0]['name']; ?>">
 							<INPUT TYPE="hidden" id="type" name="type" value="">
 							<input type="button" class="login-button" style="margin:10px" value="发送" onclick="sendLive()" />							
 												<select name="contentcate">
-												<?php echo $livecate?>
+												<?php echo $livecate ?>
 												</select>
 												<label><input type="checkbox" name="istop" value="1" />&nbsp;置顶</label>
 												<label><input type="checkbox" name="ishot" value="1" />&nbsp;精华</label>
@@ -568,7 +568,7 @@ function chataudit(chatid,status)
 							<script type="text/javascript">
 										function masterEditInit() {
 											KindEditor.ready(function(K) {
-												K.basePath = '<?php echo base_url("themes/comm/js/kindeditor/")?>/';
+												K.basePath = '<?php echo base_url("themes/comm/js/kindeditor/") ?>/';
 												editor = K.create('#content', {
 													minWidth: '370px',
 													minHeight: '100px',
@@ -578,7 +578,7 @@ function chataudit(chatid,status)
 										}								
 
 										$.ajax({
-										  url: '<?php echo base_url("themes/comm/js/kindeditor/kindeditor-min.js")?>',
+										  url: '<?php echo base_url("themes/comm/js/kindeditor/kindeditor-min.js") ?>',
 										  dataType: "script",
 											async: false,
 										  success: masterEditInit
@@ -590,14 +590,14 @@ function chataudit(chatid,status)
 								{
 									$("#type").val('1');
 									editor.sync();
-									postdata('contentsubmit', "<?php echo site_url('live/setLiveContent')?>", "retlive");
+									postdata('contentsubmit', "<?php echo site_url('live/setLiveContent') ?>", "retlive");
 								}
 
 								function sendVip()
 								{
 									$("#type").val('2');
 									editor.sync();
-									postdata('contentsubmit', "<?php echo site_url('live/setLiveContent')?>", "retvip");
+									postdata('contentsubmit', "<?php echo site_url('live/setLiveContent') ?>", "retvip");
 								}
 
 								function retlive(d)
@@ -623,12 +623,16 @@ function chataudit(chatid,status)
 									}
 								}
 							</script>
-						<?php } else { // 登录界面 ?>
+						<?php 
+				} else { // 登录界面 ?>
 							<input type="button" class="login-button" style="margin:10px" value="提问" onclick="sendquestion()"/>
-						<?php } ?>
-					<?php } else { // 非登录界面 ?>
+						<?php 
+				} ?>
+					<?php 
+			} else { // 非登录界面 ?>
 							<input type="button" class="login-button" style="margin:10px" value="提问" onclick="poplogin()" />
-					<?php } ?>
+					<?php 
+			} ?>
 					</td>
 				<tr>
 				</table>
@@ -637,9 +641,9 @@ function chataudit(chatid,status)
 			<div class="msg_con" id="chatformdiv" style="height:130px">
 			<form name="chatform" id="chatform">
 			
-			<INPUT TYPE="hidden" NAME="roomid" id="roomid" value="<?php echo $masterinfo['roomid']?>">
-			<INPUT TYPE="hidden" NAME="masterid" id="masterid" value="<?php echo $masterinfo['masterid']?>">
-			<INPUT TYPE="hidden" NAME="lastchatid" id="lastchatid" value="<?php echo (empty($lastchatid))? 0 : $lastchatid;?>">
+			<INPUT TYPE="hidden" NAME="roomid" id="roomid" value="<?php echo $masterinfo['roomid'] ?>">
+			<INPUT TYPE="hidden" NAME="masterid" id="masterid" value="<?php echo $masterinfo['masterid'] ?>">
+			<INPUT TYPE="hidden" NAME="lastchatid" id="lastchatid" value="<?php echo (empty($lastchatid)) ? 0 : $lastchatid; ?>">
 	
 			<INPUT TYPE="hidden" NAME="nextchat" id="nextchat" value="">
 
@@ -652,13 +656,13 @@ function chataudit(chatid,status)
 				<tr>
 					<td align="center">
 						<?php if (!empty($u)) { ?>
-							<INPUT TYPE="hidden" NAME="chatname" id="chatname" value="<?php echo $u['name']?>">
-							<INPUT TYPE="hidden" NAME="chatuserid" id="chatuserid" value="<?php echo $u['userid']?>">
+							<INPUT TYPE="hidden" NAME="chatname" id="chatname" value="<?php echo $u['name'] ?>">
+							<INPUT TYPE="hidden" NAME="chatuserid" id="chatuserid" value="<?php echo $u['userid'] ?>">
 							<script type="text/javascript">
 
 										function userEditInit() {
 											KindEditor.ready(function(K) {
-												K.basePath = '<?php echo base_url("themes/comm/js/kindeditor/")?>/';
+												K.basePath = '<?php echo base_url("themes/comm/js/kindeditor/") ?>/';
 												editor1  = K.create('#chatcontent', {
 													minWidth: '370px',
 													minHeight: '100px',
@@ -678,7 +682,7 @@ function chataudit(chatid,status)
 										}
 
 										$.ajax({
-										  url: '<?php echo base_url("themes/comm/js/kindeditor/kindeditor-min.js")?>',
+										  url: '<?php echo base_url("themes/comm/js/kindeditor/kindeditor-min.js") ?>',
 										  dataType: "script",
 											async: false,
 										  success: userEditInit
@@ -686,9 +690,11 @@ function chataudit(chatid,status)
 							</script>
 							<input type="hidden" name="wordcount" class="word_count" id="wordcount" />
 							<input type="button" class="login-button" style="margin:10px 0px 0px 300px;" value="发 送" onclick="setitem()"/>
-						<?php } else { // 非登录界面 ?>
+						<?php 
+				} else { // 非登录界面 ?>
 							<input type="button" class="login-button" style="margin:10px 0px 0px 300px" value="发 送" onclick="poplogin()"/>
-						<?php } ?>
+						<?php 
+				} ?>
 					</td>
 				</tr>
 				</table>

@@ -68,7 +68,7 @@
 <script type="text/javascript">
 function submitSet()
 {
-	postdata('form1', "<?php if ($act == 'add') {echo site_url("admin/liveroom/add/");} else {echo site_url("admin/liveroom/modi/" . $row['roomid']);}?>", 'show');
+	postdata('form1', "<?php echo site_url("admin/liveroom/modi/" . $row['roomid']);?>", 'show');
 }
 
 </script>

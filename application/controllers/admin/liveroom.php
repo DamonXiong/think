@@ -69,7 +69,8 @@ class Liveroom extends MY_Controller{
 
 	public function add()
 	{
-		if ($this->form_validation->run('live/roomapp') == false)
+
+		if ($this->form_validation->run() == false)
 		{
 			if (validation_errors() != '')
 			{
@@ -78,15 +79,12 @@ class Liveroom extends MY_Controller{
 				exit(json_encode($retmsg));
 			}
 
-			
-			$row = $this->n->INIT();
-			$row['userid'] = '63';
-			$this->_d['row'] = $row;
-			$this->_d['act'] = 'add';
+			$this->_data['row'] = $this->n->INIT();
+			$this->_data['act'] = 'add';
 
-			$catedata =  cate2list(0, $this->cate->getCateData('live','all'));		
-			$this->_d['cateid'] = array2option($catedata, $this->_d['row']['cateid'], 1);
-			$this->load->view($this->_d['cfg']['tpl_admin'] . 'liveroom/detail', $this->_d);
+			$catedata =  cate2list(0, $this->cate->getCateData('news','all'));
+			$this->_data['catelist'] = array2option($catedata, '', 1);
+			$this->load->view('admin/liveroom/detail', $this->_data);
 		}
 		else
 		{
