@@ -132,6 +132,7 @@ margin: -150px 0 0 -400px;
 		<span class="f_right" style="padding-top:1px;"><a href="javascript:initKefu4();" id="topqq2">联系我们</a></span>
 		<span class="f_right" id="loginstatus"><span id="ykname"><img src="/themes/v2/static/images/17yk.png" title=""><a><?php echo $userinfo['name']; ?></a></span>
 		<?php if ((!empty($userinfo)) && ($userinfo['level'] != '-1')) { ?>
+			<a id="btapproom" href="/index.php/live/roomapp">申请直播室</a>
 			<a id="btlogout" href="/index.php/user/logout">退出</a> 
 		<?php 
 } else { ?>
@@ -258,7 +259,7 @@ margin: -150px 0 0 -400px;
 		 </span></div>
 	<!-- <form id="imgUpload" name="imgUpload" action="/index.php/Upload" method="post" enctype="multipart/form-data" target="frameFile"> -->
 	<form id="imgUpload" name="imgUpload" action="/index.php/upload/multiupload/imgthumb/200/200" method="post" enctype="multipart/form-data" target="frameFile">
-	<input id="filedata" contenteditable="false" type="file" style="display:none;" onChange="$('#imgUpload').attr('action','/index.php/upload/multiupload/imgthumb/200/200?' + new Date().getTime() );document.imgUpload.submit();" name="imgFile">
+		<input id="filedata" contenteditable="false" type="file" style="display:none;" onChange="$('#imgUpload').attr('action','/index.php/upload/multiupload/imgthumb/200/200?' + new Date().getTime() );document.imgUpload.submit();" name="imgFile">
 	</form>
 	<iframe id="frameFile" name="frameFile" style="display: none;"></iframe>
 	<div class="input_area">
@@ -270,7 +271,9 @@ margin: -150px 0 0 -400px;
 		
 		<div class="clearfix"></div>
 		<ul id="caitiaonav">
-						<li rel="pt" class="f_cur" isnav="1" id="caitiao_nav_3">普通</li>		</ul></div>
+			<li rel="pt" class="f_cur" isnav="1" id="caitiao_nav_3">普通</li>
+		</ul>
+	</div>
 	</div><!-- /聊天模块结束 -->
 
 	<!-- 视频模块开始 -->
