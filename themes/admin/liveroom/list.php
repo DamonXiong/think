@@ -29,8 +29,11 @@
 		<td><?php echo $v['sort']?></td>
 		<td><?php if ($v['status'] == '1') { ?>有效<?php } else { ?>无效<?php } ?></td>
 	    <td>
-			<a href="javascript:modi(<?php echo $v['roomid']; ?>);" class="sgbtn">直播室设置</a></td>
-			</tr>
+			<a href="javascript:modi(<?php echo $v['roomid']; ?>);" class="sgbtn">直播室设置</a>
+			&nbsp;&nbsp;
+			<a href="javascript:del(<?php echo $v['roomid']; ?>);" class="sgbtn">删除</a>
+			</td>
+		</tr>
 		<?php } }?>
 		</form>
 	</table>

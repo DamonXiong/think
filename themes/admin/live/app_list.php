@@ -27,7 +27,10 @@
 		<td><?php echo $v['linkman']; ?></td>
 		<td>电话:<?php echo $v['linkphone'] ?> QQ:<?php echo $v['linkqq'] ?></td>
 	    <td>
-			<a href="javascript:modi(<?php echo $v['roomid']; ?>);" class="sgbtn">信息审核</a>&nbsp;&nbsp;</td>
+			<a href="javascript:modi(<?php echo $v['roomid']; ?>);" class="sgbtn">信息审核</a>
+			&nbsp;&nbsp;
+			<a href="javascript:del(<?php echo $v['roomid']; ?>);" class="sgbtn">删除</a>
+			</td>
 			</tr>
 		<?php } }?>
 		</form>
