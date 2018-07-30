@@ -132,7 +132,6 @@ margin: -150px 0 0 -400px;
 		<span class="f_right" style="padding-top:1px;"><a href="javascript:initKefu4();" id="topqq2">联系我们</a></span>
 		<span class="f_right" id="loginstatus"><span id="ykname"><img src="/themes/v2/static/images/17yk.png" title=""><a><?php echo $userinfo['name']; ?></a></span>
 		<?php if ((!empty($userinfo)) && ($userinfo['level'] != '-1')) { ?>
-			<a id="btapproom" href="/index.php/live/roomapp">申请直播室</a>
 			<a id="btlogout" href="/index.php/user/logout">退出</a> 
 		<?php 
 } else { ?>
@@ -285,9 +284,18 @@ margin: -150px 0 0 -400px;
 	</div>
 
 	<div id="shiping">
-		<embed width="100%" height="100%" align="middle" type="application/x-shockwave-flash" 
+		<object width="100%" height="100%" align="middle" type="application/x-shockwave-flash" 
 		wmode="transparent"   allowfullscreen="true" allowscriptaccess="never" quality="high" 
-		src="http://weblbs.yystatic.com/s/<?php echo $roominfo['yy_channel']; ?><?php if (!empty($roominfo['yy_subchannel'])) {echo "/" . $roominfo['yy_subchannel'];} ?>/finscene.swf">
+		data="http://weblbs.yystatic.com/s/<?php echo $roominfo['yy_channel']; ?>
+		<?php if (!empty($roominfo['yy_subchannel'])) {echo "/" . $roominfo['yy_subchannel'];} ?>/finscene.swf">
+			<param name="menu" value="false">
+			<param name="quality" value="high">
+			<param name="bgcolor" value="#292A2C">
+			<param name="wmode" value="opaque">
+			<param name="allowScriptAccess" value="always">
+			<param name="allowFullScreen" value="true">
+			<param name="flashvars" value="source=goldFin">
+		</object>
 	</div>
 
 	<div id="kefu" style="height: 7px;">
@@ -388,6 +396,27 @@ function show(d)
 		layer.msg(d.msg, 2, 0);
 	//	$.jBox.tip(d.msg,'error');
 	}
+}
+
+function usermodi()
+{
+	$.jBox("iframe:<?php echo site_url('user/modi');?>", {title: "个人信息修改",iframeScrolling: 'no',height: 530,width: 350,buttons: { '关闭': true }});
+}
+
+function goroom(url)
+{
+//	window.top.location.href=url;
+	window.open(url,"_blank")
+}
+
+function setLiveMaster()
+{
+	$.jBox("iframe:<?php echo site_url('live/setMaster');?>", {title: "开设直播主题",iframeScrolling: 'no',height: 250,width: 450,buttons: { '关闭': true }});
+}
+
+function roomappshow()
+{
+	$.jBox("iframe:<?php echo site_url('live/roomapp');?>", {title: "直播室申请",iframeScrolling: 'no',height: 565,width: 450,buttons: { '关闭': true }});
 }
 $('#bt_face').SinaEmotion($('#sendMsgInput'));
 </script>
