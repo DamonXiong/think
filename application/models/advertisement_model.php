@@ -2,7 +2,7 @@
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
-* ¹ã¸æĞÅÏ¢Ä£ĞÍ
+* å¹¿å‘Šä¿¡æ¯æ¨¡å‹
 *
 */
 
@@ -23,8 +23,8 @@ class Advertisement_model extends MY_Model {
 	}
 
 	/**
-	*  »ñÈ¡ÆµµÀÏÂµÄËùÓĞ¹ã¸æÊı¾İ
-	* £¨Ä¬ÈÏÊ¹ÓÃ±ğÃû±êÊ¶aliasÎª²ÎÊı×Ö¶Î£©
+	*  è·å–é¢‘é“ä¸‹çš„æ‰€æœ‰å¹¿å‘Šæ•°æ®
+	* ï¼ˆé»˜è®¤ä½¿ç”¨åˆ«åæ ‡è¯†aliasä¸ºå‚æ•°å­—æ®µï¼‰
 	*
 	*/
 	public function getChannelAds($alias)
