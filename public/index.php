@@ -11,7 +11,17 @@
 
 // [ 应用入口文件 ]
 namespace think;
+define('WEB_PATH',__DIR__ . '/');
 
+define('ROOT_PATH',__DIR__ . '/../');
+
+define('APP_PATH',__DIR__ . '/../application/');
+
+// 定义URL
+if (!defined('WEB_URL')) {
+    $url = rtrim(dirname(rtrim($_SERVER['SCRIPT_NAME'], '/')), '/');
+    define('WEB_URL', (('/' == $url || '\\' == $url) ? '' : $url));
+}
 // 加载基础文件
 require __DIR__ . '/../thinkphp/base.php';
 
